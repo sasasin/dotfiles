@@ -1,0 +1,12 @@
+[user]
+	name = Shinnosuke Suzuki
+	email = sasasin@sasasin.net
+[pager]
+        log = diff-highlight | less
+        show = diff-highlight | less
+        diff = diff-highlight | less
+
+[push]
+	default = matching
+[core]
+	editor = emacs
