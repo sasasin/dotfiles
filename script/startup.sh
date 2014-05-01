@@ -20,15 +20,6 @@ fi
 update-rc.d -f umountnfs.sh remove
 update-rc.d umountnfs.sh stop 1 0 6 .
 
-# add medibuntu repositories 
-if [ -e /etc/apt/sources.list.d/medibuntu.list ];then
-    rm -f /etc/apt/sources.list.d/medibuntu.list
-fi
-wget http://www.medibuntu.org/sources.list.d/${V_NAME}.list \
-    --output-document=/etc/apt/sources.list.d/medibuntu.list
-apt-get update
-apt-get -y --allow-unauthenticated install medibuntu-keyring
-
 # add ubuntu japanese team
 if [ -e /etc/apt/sources.list.d/ubuntu-ja.list ];then
     rm -f /etc/apt/sources.list.d/ubuntu-ja.list
@@ -41,13 +32,13 @@ sudo wget https://www.ubuntulinux.jp/sources.list.d/${V_NAME}.list \
     -O /etc/apt/sources.list.d/ubuntu-ja.list
 
 # add virtualbox repository
-if [ -e /etc/apt/sources.list.d/virtualbox.list ];then
-    rm -f /etc/apt/sources.list.d/virtualbox.list
-fi
-wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- \
-    | sudo apt-key add -
-echo "deb http://download.virtualbox.org/virtualbox/debian ${V_NAME} contrib" \
-    > /etc/apt/sources.list.d/virtualbox.list
+#if [ -e /etc/apt/sources.list.d/virtualbox.list ];then
+#    rm -f /etc/apt/sources.list.d/virtualbox.list
+#fi
+#wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- \
+#    | sudo apt-key add -
+#echo "deb http://download.virtualbox.org/virtualbox/debian ${V_NAME} contrib" \
+#    > /etc/apt/sources.list.d/virtualbox.list
 
 # add google chrome repositories
 if [ -e /etc/apt/sources.list.d/google-chrome.list ];then
@@ -66,22 +57,32 @@ apt-get autoclean -y
 echo "#####"
 echo "##### install packages"
 echo "#####"
-cat $FS_PATH/bin/init_install.lst \
+rm -f /tmp/init_install.sh
+cat $HOME/script/init_install.lst \
 | sort -u \
 | grep -Ev '^#' \
 | while read f ;do
-    apt-get install -y $f
+    echo "apt-get install -y $f" >> /tmp/init_install.sh
+    wait
 done
+chmod +x /tmp/init_install.sh
+/tmp/init_install.sh
+rm -f /tmp/init_install.sh
 
 echo "#####"
 echo "##### remove packages"
 echo "#####"
-cat $FS_PATH/bin/init_remove.lst \
+rm -f /tmp/init_remove.sh
+cat $HOME/script/init_remove.lst \
 | sort -u \
 | grep -Ev '^#' \
 | while read f ;do
-    apt-get remove -y $f
+    echo "apt-get remove -y $f" >> /tmp/init_remove.sh
+    wait
 done
+chmod +x /tmp/init_remove.sh
+/tmp/init_remove.sh
+rm -f /tmp/init_remove.sh
 
 # finish
 apt-get update -y

@@ -1,4 +1,5 @@
 shutter
+l2tp-ipsec-vpn
 mtpfs
 mtp-tools
 gmtp
@@ -24,8 +25,6 @@ emacs24
 emacs24-el
 exfat-fuse
 fbreader
-#fcitx
-#fcitx-mozc
 ffmpeg
 fuse-utils
 ghc
@@ -35,8 +34,8 @@ ghc-profstress
 gimp
 git-core
 git-svn
-gnome-do
-gnome-do-plugins
+#gnome-do
+#gnome-do-plugins
 gnome-mplayer
 gnome-system-monitor
 google-chrome-stable
@@ -114,7 +113,9 @@ ttf-vlgothic
 ubuntu-restricted-extras
 unpaper
 usb-creator-gtk
-virtualbox-4.3
+vagrant
+virtualbox
+#virtualbox-4.3
 vlc
 w64codecs
 wakeonlan
