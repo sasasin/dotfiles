@@ -1,2 +1,6 @@
 .emacs.d/tramp
 .emacs.d/auto-save-list/
+.emacs.d/eshell/history
+.emacs.d/eshell/lastdir
+
+
