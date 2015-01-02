@@ -1,0 +1,9 @@
+---
+# tasks file for homebrew-cask-packages
+
+- homebrew_tap: tap=caskroom/cask state=present
+
+- homebrew: name=brew-cask state=latest
+
+- homebrew_cask: name={{ item }} state=installed
+  with_items: homebrew_cask_packages_packages

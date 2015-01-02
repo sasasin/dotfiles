@@ -1,0 +1,64 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  sudo: no
+  vars:
+    homebrew_packages_taps:
+      - homebrew/binary
+      - homebrew/dupes
+    homebrew_packages_packages:
+      - { name: gcc }
+      - { name: ansible }
+      - { name: git }
+      - { name: emacs }
+      - { name: jq }
+      - { name: jpeg }
+      - { name: q }
+      - { name: imagemagick }
+      - { name: mysql }
+      - { name: maven }
+      - { name: python }
+      - { name: wget }
+      - { name: bash-completion }
+      - { name: smartmontools }
+      - { name: ghc }
+      - { name: cabal-install }
+    homebrew_cask_packages_packages:
+      - java7
+      - amazon-music
+      - atom
+      - eclipse-jee
+      - google-chrome
+      - google-japanese-ime
+      - intellij-idea-ce
+      - iterm2
+      - mysqlworkbench
+      - sourcetree
+      - vagrant
+      - virtualbox
+      - bathyscaphe
+      - mou
+      - google-drive
+      - android-file-transfer
+    atom_packages_packages:
+      - atom-alignment
+      - atom-color-highlight
+      - autocomplete-plus
+      - bracket-matcher
+      - file-icons
+      - ide-haskell
+      - japanese-wrap
+      - language-haskell
+      - linter
+      - linter-hlint
+      - merge-conflicts
+      - pretty-json
+      - project-manager
+      - recent-files
+      - script
+      - sort-lines
+      - sublime-style-column-selection
+  roles:
+    - hnakamur.homebrew-packages
+    - hnakamur.homebrew-cask-packages
+    - hnakamur.atom-packages

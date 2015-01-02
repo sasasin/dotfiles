@@ -1,0 +1,29 @@
+---
+homebrew_packages_taps:
+  - homebrew/binary
+  - homebrew/dupes
+
+homebrew_packages_packages:
+  - { name: autoconf }
+  - { name: automake }
+  - { name: cmake }
+  - { name: ctags }
+  - { name: docker }
+  - { name: git }
+  - { name: htop }
+  - { name: jq }
+  - { name: hub }
+  - { name: imagemagick }
+  - { name: mercurial }
+  - { name: mysql }
+  - { name: packer }
+  - { name: phantomjs }
+  - { name: pkg-config }
+  - { name: pwgen }
+  - { name: redis }
+  - { name: subversion }
+  - { name: the_silver_searcher }
+  - { name: tig }
+  - { name: whois }
+  - { name: xz }
+  - { name: wget }
