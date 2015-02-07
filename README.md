@@ -6,11 +6,13 @@ Ubuntu/Xubuntu/Kubuntuを、大体いい感じにセットアップするスク�
 
 これを手元に持ってくるため、git-coreをインストールしてください。
 
-sudo apt-get update
-sudo apt-get install git-core
-mkdir $HOME/git
-cd $HOME/git
-git clone https://github.com/sasasin/dotfiles.git
-cd dotfiles/script
+    sudo apt-get update
+    sudo apt-get install git-core
 
-sudo ./startup.sh
+てきとうな場所にcloneして、セットアップスクリプトを実行します。
+
+    mkdir $HOME/git
+    cd $HOME/git
+    git clone https://github.com/sasasin/dotfiles.git
+    cd dotfiles/script
+    sudo ./startup.sh
