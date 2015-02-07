@@ -23,6 +23,9 @@
       - { name: smartmontools }
       - { name: ghc }
       - { name: cabal-install }
+      - { name: libaacs }
+      - { name: libdvdcss }
+      - { name: clisp }
     homebrew_cask_packages_packages:
       - java7
       - amazon-music
@@ -36,10 +39,17 @@
       - sourcetree
       - vagrant
       - virtualbox
-      - bathyscaphe
       - mou
       - google-drive
       - android-file-transfer
+      - vlc
+      - skitch
+      - handbrake
+      - handbrakecli
+      - makemkv
+      - alfred
+      - diskwave
+      - skim
     atom_packages_packages:
       - atom-alignment
       - atom-color-highlight
