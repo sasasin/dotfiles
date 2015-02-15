@@ -1,4 +1,2 @@
 
-FSPATH=/mnt/SolarisSMB
-
-export PATH=$PATH:$HOME/bin:$HOME/script:$FSPATH/bin:$FSPATH/bin/pdfdirection/pdfdirection/script:$FSPATH/bin/jpdfbookmarks-2.5.2
+export PATH=$PATH:$HOME/bin:$HOME/script:$HOME/git/sasasin/pdfdirection/pdfdirection/script:$HOME/script/jpdfbookmarks-2.5.2
