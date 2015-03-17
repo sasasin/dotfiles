@@ -27,6 +27,7 @@
       - { name: libdvdcss }
       - { name: clisp }
     homebrew_cask_packages_packages:
+      - java
       - java7
       - amazon-music
       - atom
