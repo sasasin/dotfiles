@@ -29,7 +29,6 @@
     homebrew_cask_packages_packages:
       - java
       - java7
-      - amazon-music
       - atom
       - eclipse-jee
       - google-chrome
