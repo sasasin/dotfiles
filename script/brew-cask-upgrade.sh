@@ -1,6 +1,6 @@
 #!/bin/sh -v
 brew update
-brew upgrade
+brew upgrade --all
 brew cleanup
 
 for c in `brew cask list`; 
