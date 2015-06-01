@@ -26,6 +26,12 @@
       - { name: libaacs }
       - { name: libdvdcss }
       - { name: clisp }
+      - { name: dos2unix }
+      - { name: unar }
+      - { name: spring-roo }
+      - { name: tomcat }
+      - { name: heroku-toolbelt }
+      - { name: vagrant-completion }
     homebrew_cask_packages_packages:
       - java
       - java7
@@ -33,7 +39,7 @@
       - eclipse-jee
       - google-chrome
       - google-japanese-ime
-      - intellij-idea-ce
+      - intellij-idea
       - iterm2
       - mysqlworkbench
       - sourcetree
@@ -49,7 +55,7 @@
       - makemkv
       - alfred
       - diskwave
-      - skim
+      - macs-fan-control
     atom_packages_packages:
       - atom-alignment
       - atom-color-highlight
