@@ -7,58 +7,66 @@
       - homebrew/binary
       - homebrew/dupes
     homebrew_packages_packages:
-      - { name: gcc }
       - { name: ansible }
-      - { name: git }
-      - { name: emacs }
-      - { name: jq }
-      - { name: jpeg }
-      - { name: q }
-      - { name: imagemagick }
-      - { name: mysql }
-      - { name: maven }
-      - { name: python }
-      - { name: wget }
       - { name: bash-completion }
-      - { name: smartmontools }
-      - { name: ghc }
       - { name: cabal-install }
+      - { name: clisp }
+      - { name: composer }
+      - { name: dos2unix }
+      - { name: emacs }
+      - { name: gcc }
+      - { name: ghc }
+      - { name: git }
+      - { name: heroku-toolbelt }
+      - { name: imagemagick }
+      - { name: jpeg }
+      - { name: jq }
       - { name: libaacs }
       - { name: libdvdcss }
-      - { name: clisp }
-      - { name: dos2unix }
-      - { name: unar }
+      - { name: maven }
+      - { name: mysql }
+      - { name: php-code-sniffer}
+      - { name: php-cs-fixer }
+      - { name: php54 }
+      - { name: php54-xdebug }
+      - { name: phplint }
+      - { name: phpmd }
+      - { name: python }
+      - { name: q }
+      - { name: smartmontools }
       - { name: spring-roo }
       - { name: tomcat }
-      - { name: heroku-toolbelt }
+      - { name: unar }
       - { name: vagrant-completion }
+      - { name: wget }
     homebrew_cask_packages_packages:
-      - java
-      - java7
+      - alfred
+      - android-file-transfer
       - atom
+      - diskwave
       - eclipse-jee
       - google-chrome
+      - google-drive
       - google-japanese-ime
+      - handbrake
+      - handbrakecli
       - intellij-idea
       - iterm2
+      - java
+      - java7
+      - macs-fan-control
+      - makemkv
+      - mou
       - mysqlworkbench
+      - skitch
       - sourcetree
       - vagrant
       - virtualbox
-      - mou
-      - google-drive
-      - android-file-transfer
       - vlc
-      - skitch
-      - handbrake
-      - handbrakecli
-      - makemkv
-      - alfred
-      - diskwave
-      - macs-fan-control
     atom_packages_packages:
       - atom-alignment
       - atom-color-highlight
+      - atom-beautify
       - autocomplete-plus
       - bracket-matcher
       - file-icons
@@ -67,10 +75,17 @@
       - language-haskell
       - linter
       - linter-hlint
+      - linter-php
+      - linter-phpcs
+      - linter-phpmd
+      - autocomplete-php
+      - autocomplete-phpunit
+      - php-class-tree
+      - php-cs-fixer
       - merge-conflicts
+      - minimap
       - pretty-json
       - project-manager
-      - recent-files
       - script
       - sort-lines
       - sublime-style-column-selection
