@@ -6,28 +6,17 @@ xcode-select --install
 # homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# homebrew-cask
-brew install caskroom/cask/brew-cask
+# http://befool.co.jp/blog/jiska/farewell-brew-bundle-hello-brew-brewdler/
+brew tap homebrew/brewdler
+cd /usr/local/Library/Taps/homebrew/homebrew-brewdler
+git remote set-url origin git@github.com:Homebrew/homebrew-brewdler.git
 
-# homebrew-versions
-brew tap caskroom/versions
+brew brewdle
 
-# ansible
-brew install python
-brew install ansible
-
-## homebrew, cask, atom packages for ansible
-#mkdir ~/ansible-works
-#cd ~/ansible-works
-#ansible-galaxy install --roles-path=. hnakamur.homebrew-packages
-#ansible-galaxy install --roles-path=. hnakamur.homebrew-cask-packages
-#ansible-galaxy install --roles-path=. hnakamur.atom-packages 
+apm login
+apm stars --install
 
 # ansible hosts file for installed by homebrew
 mkdir -p /usr/local/etc/ansible
 echo localhost > /usr/local/etc/ansible/hosts
-
-# minimum install 
-brew cask install google-chrome
-brew cask install google-japanese-ime
 
