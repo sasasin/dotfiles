@@ -1,3 +1,3 @@
 #!/bin/bash -v
 
-mogrify -modulate 115 +contrast "$@"
+mogrify -modulate 115 -contrast "$@"
