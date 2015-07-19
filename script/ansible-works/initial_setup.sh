@@ -20,3 +20,9 @@ apm stars --install
 mkdir -p /usr/local/etc/ansible
 echo localhost > /usr/local/etc/ansible/hosts
 
+vagrant plugin install vagrant-omnibus
+vagrant plugin install vagrant-vbox-snapshot
+vagrant plugin install vagrant-vbguest
+vagrant plugin install vagrant-cachier
+vagrant plugin install sahara
+
