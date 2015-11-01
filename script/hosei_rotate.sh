@@ -1,4 +1,5 @@
 #!/bin/bash -v
+# 横倒しにした画像を縦にする
 ads2500w_rename.sh *.jpg
 wait
 hosei_rotate90.sh *0.jpg &
