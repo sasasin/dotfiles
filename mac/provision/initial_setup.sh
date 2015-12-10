@@ -13,6 +13,8 @@ git remote set-url origin git@github.com:Homebrew/homebrew-brewdler.git
 
 brew brewdle
 
+ln -s /usr/local/share/git-core/contrib/diff-highlight/diff-highlight /usr/local/bin/diff-highlight
+
 apm login
 apm stars --install
 
