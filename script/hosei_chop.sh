@@ -1,0 +1,9 @@
+#!/bin/bash -v
+hosei_chop_left.sh "$@"
+hosei_rotate_right.sh "$@"
+hosei_chop_left.sh "$@"
+hosei_rotate_right.sh "$@"
+hosei_chop_left.sh "$@"
+hosei_rotate_right.sh "$@"
+hosei_chop_left.sh "$@"
+hosei_rotate_right.sh "$@"
