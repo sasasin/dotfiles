@@ -1,7 +1,5 @@
 #!/bin/bash -v
 
-ads2500w_rename.sh *_*.jpg
-
 ls *.jpg | xargs -P1 -L3 hosei_ura.sh
 ls *.jpg | xargs -P1 -L3 hosei_ura.sh
 ls *[13579].jpg | xargs -P1 -L3 hosei_ura.sh
