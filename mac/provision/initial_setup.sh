@@ -11,6 +11,8 @@ brew tap homebrew/brewdler
 cd /usr/local/Library/Taps/homebrew/homebrew-brewdler
 git remote set-url origin git@github.com:Homebrew/homebrew-brewdler.git
 
+brew tap caskroom/cask
+
 brew brewdle
 
 ln -s /usr/local/share/git-core/contrib/diff-highlight/diff-highlight /usr/local/bin/diff-highlight
