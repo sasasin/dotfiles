@@ -1,0 +1,8 @@
+dotenv
+sahara
+vagrant-aws
+vagrant-cachier
+vagrant-omnibus
+vagrant-share
+vagrant-vbguest
+vagrant-vbox-snapshot
