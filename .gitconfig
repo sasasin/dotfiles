@@ -1,15 +1,26 @@
 [user]
-	name = Shinnosuke Suzuki
+	name = ShinnosukeSuzuki
 	email = sasasin@sasasin.net
 [pager]
-        log = diff-highlight | less
-        show = diff-highlight | less
-        diff = diff-highlight | less
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
 
 [push]
 	default = matching
 [core]
-	editor = emacs
+	editor = vim
+	excludesfile = /Users/s_suzuki/.gitignore_global
 [credential]
 	helper = cache
 	helper = cache
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.2.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	smudge = git-lfs smudge %f
+	required = true
+	clean = git-lfs clean %f
