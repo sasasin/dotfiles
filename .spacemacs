@@ -48,6 +48,7 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
                                       ddskk
+                                      open-junk-file
                                       )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
@@ -288,12 +289,23 @@ you should place your code here."
   (when (require 'skk nil t)
     (global-set-key (kbd "C-x j") 'skk-mode)
     (setq default-input-method "japanese-skk")         ;;emacs上での日本語入力にskkをつかう
-    (require 'skk-study)                               ;;変換学習機能の追加
+    ;; http://tagomoris.hatenablog.com/entry/20101209/1291900492
+    ;;(require 'skk-setup)
+    (require 'skk-study)
+    ;;skk-server AquaSKK
+    (setq skk-server-portnum 1178)
+    (setq skk-server-host "localhost")
+
     )
 
   ;; 自動改行をoffにする
   (setq text-mode-hook 'turn-off-auto-fill)
   (setq auto-fill-mode nil)
+
+  ;; open-junk-file
+  (require 'open-junk-file)
+  (setq open-junk-file-format "~/Documents/junk/%Y-%m%d-%H%M%S.")
+  (global-set-key (kbd "C-x t") 'open-junk-file)
 
   )
 
