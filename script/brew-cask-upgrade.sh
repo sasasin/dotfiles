@@ -3,8 +3,8 @@ brew update
 brew upgrade --all
 brew cleanup
 
-for c in `brew cask list`; 
-do 
+brew cask list \
+| while read c; do
 	! brew cask info $c \
 	| grep -qF "Not installed" || brew cask install $c; 
 done
