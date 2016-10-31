@@ -1,20 +1,20 @@
 #!/bin/bash
 
 V_NAME=`lsb_release -cs`
-FS_PATH=/mnt/SolarisSMB
+#FS_PATH=/mnt/SolarisSMB
 
 LANG=C xdg-user-dirs-gtk-update
 
 apt-get install -y cifs-utils fuse-utils preload
 
 # sasasin.net file server mount
-if [ ! -e $FS_PATH ];then
-    mkdir -p $FS_PATH
-    chown -R sasasin:sasasin $FS_PATH
-    ## deleted option "codepage=...." from ubuntu 12.10
-    echo "//192.168.116.5/PUBLIC /mnt/SolarisSMB cifs username=nobody,password=,uid=sasasin,gid=sasasin,rw,file_mode=0777,dir_mode=0777,iocharset=utf8,sec=ntlm 0 0" >> /etc/fstab
-    mount -a
-fi
+#if [ ! -e $FS_PATH ];then
+#    mkdir -p $FS_PATH
+#    chown -R sasasin:sasasin $FS_PATH
+#    ## deleted option "codepage=...." from ubuntu 12.10
+#    echo "//192.168.116.5/PUBLIC /mnt/SolarisSMB cifs username=nobody,password=,uid=sasasin,gid=sasasin,rw,file_mode=0777,dir_mode=0777,iocharset=utf8,sec=ntlm 0 0" >> /etc/fstab
+#    mount -a
+#fi
 # shutdown fail, if use SMBFS.
 # http://itmst.blog71.fc2.com/blog-entry-171.html
 update-rc.d -f umountnfs.sh remove
@@ -32,13 +32,13 @@ sudo wget https://www.ubuntulinux.jp/sources.list.d/${V_NAME}.list \
     -O /etc/apt/sources.list.d/ubuntu-ja.list
 
 # add virtualbox repository
-#if [ -e /etc/apt/sources.list.d/virtualbox.list ];then
-#    rm -f /etc/apt/sources.list.d/virtualbox.list
-#fi
-#wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- \
-#    | sudo apt-key add -
-#echo "deb http://download.virtualbox.org/virtualbox/debian ${V_NAME} contrib" \
-#    > /etc/apt/sources.list.d/virtualbox.list
+if [ -e /etc/apt/sources.list.d/virtualbox.list ];then
+    rm -f /etc/apt/sources.list.d/virtualbox.list
+fi
+wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- \
+    | sudo apt-key add -
+echo "deb http://download.virtualbox.org/virtualbox/debian ${V_NAME} contrib" \
+    > /etc/apt/sources.list.d/virtualbox.list
 
 # add google chrome repositories
 if [ -e /etc/apt/sources.list.d/google-chrome.list ];then
