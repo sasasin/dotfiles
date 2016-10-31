@@ -36,8 +36,8 @@ ghc-profstress
 gimp
 git-core
 git-svn
-#gnome-do
-#gnome-do-plugins
+gnome-do
+gnome-do-plugins
 gnome-mplayer
 gnome-system-monitor
 google-chrome-stable
@@ -47,6 +47,7 @@ hplip
 hplip-gui
 ia32-libs
 ibus-mozc
+ibus-skk
 imagemagick
 jd
 kernel-package
@@ -84,9 +85,9 @@ ncurses-dev
 okular
 okular-extra-backends
 ooo-thumbnailer
-openjdk-7-doc
-openjdk-7-jdk maven
-openjdk-7-source
+openjdk-8-doc
+openjdk-8-jdk maven
+openjdk-8-source
 openssl
 optipng
 otf-freefont
