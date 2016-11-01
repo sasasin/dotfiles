@@ -47,8 +47,8 @@ gnome-system-monitor
 google-chrome-stable
 gparted
 gwakeonlan
-hplip
-hplip-gui
+#hplip
+#hplip-gui
 ia32-libs
 ibus-mozc
 ibus-skk
