@@ -39,7 +39,7 @@ values."
      github
      html
      ansible
-     dockerfile
+     ;;dockerfile
      shell
      )
    ;; List of additional packages that will be installed without being
