@@ -1,3 +1,7 @@
+openvpn
+network-manager-openvpn
+network-manager-openvpn-gnome
+network-manager-vpnc
 libjpeg-turbo-progs
 g++multilib
 shutter
