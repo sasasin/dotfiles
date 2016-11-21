@@ -34,7 +34,7 @@ echo "#####"
 echo "##### install packages"
 echo "#####"
 rm -f /tmp/init_install.sh
-cat $HOME/script/init_install.lst \
+cat ./init_install.lst \
 | sort -u \
 | grep -Ev '^#' \
 | while read f ;do
@@ -45,7 +45,7 @@ echo "#####"
 echo "##### remove packages"
 echo "#####"
 rm -f /tmp/init_remove.sh
-cat $HOME/script/init_remove.lst \
+cat ./init_remove.lst \
 | sort -u \
 | grep -Ev '^#' \
 | while read f ;do
