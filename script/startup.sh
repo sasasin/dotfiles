@@ -19,10 +19,9 @@ wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-
 echo "deb http://download.virtualbox.org/virtualbox/debian ${V_NAME} contrib" > /etc/apt/sources.list.d/virtualbox.list
 
 # add google chrome repositories
-echo "deb http://dl.google.com/linux/chrome/deb/ stable main" \
-    > /etc/apt/sources.list.d/google-chrome.list
 rm -f /etc/apt/sources.list.d/google-chrome.list
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' > /etc/apt/sources.list.d/google-chrome.list
 
 apt-get update -y
 apt-get dist-upgrade -y
