@@ -50,6 +50,8 @@ cat ./init_remove.lst \
     apt-get remove -y $f
 done
 
+apt-get install -y $(check-language-support)
+sudo -iu $SUDO_USER /bin/bash -lc '/usr/bin/im-config -n uim'
 
 # finish
 apt-get update -y
