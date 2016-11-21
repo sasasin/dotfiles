@@ -14,9 +14,8 @@ echo "deb http://archive.ubuntulinux.jp/ubuntu ${V_NAME} main" > /etc/apt/source
 #echo "deb http://archive.ubuntulinux.jp/ubuntu-ja-non-free ${V_NAME} multiverse" >> /etc/apt/sources.list.d/ubuntu-ja.list
 
 # add virtualbox repository
-wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- \
-    | sudo apt-key add -
 rm -f /etc/apt/sources.list.d/virtualbox.list
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
 echo "deb http://download.virtualbox.org/virtualbox/debian ${V_NAME} contrib" > /etc/apt/sources.list.d/virtualbox.list
 
 # add google chrome repositories
