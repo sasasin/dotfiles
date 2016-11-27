@@ -32,6 +32,12 @@ if [ ! -e /usr/bin/atom ]; then
 	dpkg -i atom-amd64.deb
 fi
 
+if [ ! -e /usr/bin/gitkraken ]; then
+	# install gitkraken
+	wget https://release.gitkraken.com/linux/gitkraken-amd64.deb -O gitkraken-amd64.deb
+	dpkg -i gitkraken-amd64.deb
+fi
+
 if [ ! -e /usr/bin/vagrant ]; then
 	# install vagrant
 	VAGRANT_VERSION=$(wget https://releases.hashicorp.com/vagrant/ -O - \
