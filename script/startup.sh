@@ -1,7 +1,5 @@
 #!/bin/bash -v
-
 V_NAME=`lsb_release -cs`
-
 LANG=C xdg-user-dirs-gtk-update
 
 apt-get install -y cifs-utils fuse-utils preload
@@ -51,7 +49,6 @@ fi
 echo "#####"
 echo "##### install packages"
 echo "#####"
-rm -f /tmp/init_install.sh
 cat ./init_install.lst \
 | sort -u \
 | grep -Ev '^#' \
@@ -62,7 +59,6 @@ done
 echo "#####"
 echo "##### remove packages"
 echo "#####"
-rm -f /tmp/init_remove.sh
 cat ./init_remove.lst \
 | sort -u \
 | grep -Ev '^#' \
