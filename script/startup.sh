@@ -68,6 +68,7 @@ done
 
 apt-get install -y $(check-language-support)
 sudo -iu $SUDO_USER /bin/bash -lc '/usr/bin/im-config -n uim'
+sudo -iu $SUDO_USER /bin/bash -lc 'LANG=C xdg-user-dirs-gtk-update'
 
 # finish
 apt-get update -y
