@@ -28,9 +28,11 @@ apt-get dist-upgrade -y
 apt-get autoremove -y
 apt-get autoclean -y
 
-# install atom editor
-wget https://atom.io/download/deb -O atom-amd64.deb
-dpkg -i atom-amd64.deb
+if [ !-e /usr/bin/atom ]; then
+	# install atom editor
+	wget https://atom.io/download/deb -O atom-amd64.deb
+	dpkg -i atom-amd64.deb
+fi
 
 echo "#####"
 echo "##### install packages"
