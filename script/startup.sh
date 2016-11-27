@@ -34,6 +34,20 @@ if [ !-e /usr/bin/atom ]; then
 	dpkg -i atom-amd64.deb
 fi
 
+if [ !-e /usr/bin/vagrant ]; then
+	# install vagrant
+	VAGRANT_VERSION=$(wget https://releases.hashicorp.com/vagrant/ -O - \
+		| grep /vagrant \
+		| sort \
+		| sed -e 's/"/ /g' \
+		| awk '{print $3}' \
+		| awk 'BEGIN{FS="/"}{print $3}' \
+		| tail -n1)
+	VAGRANT_URL="https://releases.hashicorp.com/vagrant/${VAGRANT_VERSION}/vagrant_${VAGRANT_VERSION}_$(uname -i).deb"
+	wget $VAGRANT_URL
+	dpkg -i vagrant_${VAGRANT_VERSION}_$(uname -i).deb
+fi
+
 echo "#####"
 echo "##### install packages"
 echo "#####"
