@@ -26,13 +26,13 @@ apt-get dist-upgrade -y
 apt-get autoremove -y
 apt-get autoclean -y
 
-if [ !-e /usr/bin/atom ]; then
+if [ ! -e /usr/bin/atom ]; then
 	# install atom editor
 	wget https://atom.io/download/deb -O atom-amd64.deb
 	dpkg -i atom-amd64.deb
 fi
 
-if [ !-e /usr/bin/vagrant ]; then
+if [ ! -e /usr/bin/vagrant ]; then
 	# install vagrant
 	VAGRANT_VERSION=$(wget https://releases.hashicorp.com/vagrant/ -O - \
 		| grep /vagrant \
@@ -67,7 +67,7 @@ cat ./init_remove.lst \
 done
 
 apt-get install -y $(check-language-support)
-sudo -iu $SUDO_USER /bin/bash -lc '/usr/bin/im-config -n uim'
+sudo -iu $SUDO_USER /bin/bash -lc '/usr/bin/im-config -n fcitx'
 sudo -iu $SUDO_USER /bin/bash -lc 'LANG=C xdg-user-dirs-gtk-update'
 
 # finish
