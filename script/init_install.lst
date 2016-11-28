@@ -14,6 +14,8 @@ emacs24-el
 exfat-fuse
 fbreader
 ffmpeg
+fcitx
+fcitx-skk
 gimp
 git
 git-hub
@@ -33,6 +35,7 @@ kernel-package
 language-pack-gnome-ja
 language-pack-ja
 language-support-ja
+language-selector-gnome
 libdvdcss2
 libdvdread4
 libimage-size-perl
