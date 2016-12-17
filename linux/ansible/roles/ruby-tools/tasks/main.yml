@@ -1,6 +1,6 @@
 ---
 - name: install gems
-  gem: name={{ item }} state=latest
+  gem: name={{ item }} state=latest executable=/usr/local/rbenv/shims/gem user_install=False
   with_items:
     - bundler
     - specific_install
