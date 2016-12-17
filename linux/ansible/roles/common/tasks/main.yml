@@ -1,6 +1,8 @@
 ---
 - name: apt-get update
   apt: update_cache=yes
+  check_mode: no
+  failed_when: no
 
 - name: apt-get dist-upgrade
   apt: upgrade=dist
@@ -22,7 +24,7 @@
 
 - name: apt-get update
   apt: update_cache=yes
-  always_run: yes
+  check_mode: no
   failed_when: no
 
 - name: install some packages
