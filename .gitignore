@@ -1,8 +1,7 @@
-.emacs.d/tramp
-.emacs.d/auto-save-list/
-.emacs.d/eshell/history
-.emacs.d/eshell/lastdir
-
+linux/.emacs.d/tramp
+linux/.emacs.d/auto-save-list/
+linux/.emacs.d/eshell/lastdir
+linux/.emacs.d/eshell/history
 
 # galaxyから取得したroleは管理しない
 linux/ansible/roles/*.*

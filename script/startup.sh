@@ -38,6 +38,11 @@ if [ ! -e /usr/bin/gitkraken ]; then
 	dpkg -i gitkraken-amd64.deb
 fi
 
+if [ ! -e /usr/bin/rescuetime ]; then
+	wget https://www.rescuetime.com/installers/rescuetime_current_amd64.deb
+	dpkg -i rescuetime_current_amd64.deb
+fi
+
 if [ ! -e /usr/bin/vagrant ]; then
 	# install vagrant
 	VAGRANT_VERSION=$(wget https://releases.hashicorp.com/vagrant/ -O - \
