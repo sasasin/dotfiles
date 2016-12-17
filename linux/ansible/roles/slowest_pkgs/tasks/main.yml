@@ -1,0 +1,20 @@
+---
+- name: get latest vagrant version number
+  shell: |
+    wget https://releases.hashicorp.com/vagrant/ -O - \
+      | grep /vagrant \
+      | sort \
+      | sed -e 's/"/ /g' \
+      | awk '{print $3}' \
+      | awk 'BEGIN{FS="/"}{print $3}' \
+      | tail -n1
+  register: vagrant_version
+
+- name: install from specific download site
+  apt: deb={{ item }} state=present
+  with_items:
+    - "https://atom.io/download/deb"
+    - "https://release.gitkraken.com/linux/gitkraken-amd64.deb"
+    - "https://www.rescuetime.com/installers/rescuetime_current_amd64.deb"
+    - "https://releases.hashicorp.com/vagrant/{{ vagrant_version.stdout }}/vagrant_{{ vagrant_version.stdout }}_{{ ansible_architecture }}.deb"
+  always_run: yes

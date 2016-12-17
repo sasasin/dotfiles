@@ -1,0 +1,141 @@
+---
+- name: apt-get update
+  apt: update_cache=yes
+
+- name: apt-get dist-upgrade
+  apt: upgrade=dist
+
+- name: add apt-keys
+  apt_key: url={{ item }} state=present
+  with_items:
+    - "https://www.ubuntulinux.jp/ubuntu-ja-archive-keyring.gpg"
+    - "https://www.ubuntulinux.jp/ubuntu-jp-ppa-keyring.gpg"
+    - "https://www.virtualbox.org/download/oracle_vbox_2016.asc"
+    - "https://dl-ssl.google.com/linux/linux_signing_key.pub"
+
+- name: put apt.sources.list
+  template: src=etc/apt/sources.list.d/{{ item }} dest=/etc/apt/sources.list.d/{{ item }}
+  with_items:
+    - google-chrome.list
+    - virtualbox.list
+    - ubuntu-ja.list
+
+- name: apt-get update
+  apt: update_cache=yes
+  always_run: yes
+  failed_when: no
+
+- name: install some packages
+  apt: name={{ item }} state=present
+  with_items:
+    - libqt4-sql-sqlite
+    - autoconf
+    - awscli
+    - build-essential
+    - byobu
+    - cifs-utils
+    - curl
+    - dkms
+    - docker.io
+    - doxygen
+    - doxygen-gui
+    - dstat
+    - emacs24
+    - emacs24-el
+    - exfat-fuse
+    - fbreader
+    - ffmpeg
+    - fcitx
+    - fcitx-skk
+    - gimp
+    - git
+    - git-hub
+    - git-core
+    - gmtp
+    - gnome-mplayer
+    - gnome-system-monitor
+    - gnome-terminal
+    - google-chrome-stable
+    - gparted
+    - gtk-theme-switch
+    - ibus
+    - ibus-skk
+    - imagemagick
+    - kbuild
+    - kernel-package
+    - language-pack-gnome-ja
+    - language-pack-ja
+    - language-selector-gnome
+    - libdvdcss2
+    - libdvdread4
+    - libimage-size-perl
+    - libjpeg-turbo-progs
+    - libmoose-perl
+    - libncurses5-dev
+    - libpdf-create-perl
+    - linux-source
+    - lm-sensors
+    - lsb
+    - lynx
+    - macfanctld
+    - mencoder
+    - mplayer
+    - mtpfs
+    - mtp-tools
+    - ncftp
+    - ncurses-dev
+    - network-manager-openvpn
+    - network-manager-openvpn-gnome
+    - network-manager-vpnc
+    - ooo-thumbnailer
+    - openjdk-8-doc
+    - openjdk-8-jdk
+    - openjdk-8-source
+    - openssl
+    - openvpn
+    - optipng
+    - otf-freefont
+    - p7zip-full
+    - pdftk
+    - perltidy
+    - php-all-dev
+    - pngnq
+    - poppler-data
+    - ppa-purge
+    - preload
+    - shutter
+    - sloccount
+    - sqlite3
+    - ssh
+    - strongswan
+    - synaptic
+    - sysstat
+    - ubuntu-fan
+    - ubuntu-mate-icon-themes
+    - ubuntu-restricted-extras
+    - unpaper
+    - usb-creator-gtk
+    - virtualbox-5.1
+    - vlc
+#    - w64codecs
+    - wakeonlan
+    - xbindkeys
+    - xclip
+    - xvkbd
+    - zlib1g
+    - zlib1g-dev
+
+- name: remove some packages
+  apt: name={{ item }} state=absent
+  with_items:
+    - gnumeric
+    - gnumeric-common
+    - gnumeric-doc
+    - abiword
+    - abiword-common
+    - unity-lens-shopping
+    - unity-lens-photos
+    - unity-lens-radios
+
+- name: install language-support
+  shell: apt-get install -y $(check-language-support)

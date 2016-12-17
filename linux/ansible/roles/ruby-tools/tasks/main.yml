@@ -1,0 +1,6 @@
+---
+- name: install gems
+  gem: name={{ item }} state=latest
+  with_items:
+    - bundler
+    - specific_install

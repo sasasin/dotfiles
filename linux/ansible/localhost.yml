@@ -1,0 +1,11 @@
+- hosts: localhost
+  connection: local
+  become: true
+  become_method: sudo
+  vars_files:
+    - vars/zzet.rbenv.yml
+  roles:
+    - common
+    - zzet.rbenv
+    - ruby-tools
+    #- slowest_pkgs
