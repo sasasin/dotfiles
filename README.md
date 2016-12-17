@@ -1,6 +1,6 @@
 # dotfiles
 
-Ubuntu/Xubuntu/Kubuntuを、大体いい感じにセットアップするスクリプト集です。
+Ubuntu、Macを、大体いい感じにセットアップするスクリプト集です。
 
 #使い方
 
@@ -14,5 +14,10 @@ Ubuntu/Xubuntu/Kubuntuを、大体いい感じにセットアップするスク�
     mkdir $HOME/git
     cd $HOME/git
     git clone https://github.com/sasasin/dotfiles.git
-    cd dotfiles/script
-    sudo ./startup.sh
+    # for linux
+    cd dotfiles/linux/ansible
+    sudo ./provision.sh
+    # for mac
+    # xcodeをインストールしてから....
+    cd dotfiles/mac/provision
+    ./initial_setup.sh
