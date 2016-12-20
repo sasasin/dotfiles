@@ -7,6 +7,7 @@ fi
 apt-get -y install python2.7 python-setuptools lsb
 apt-get -y ieee-data python-httplib2 python-jinja2 python-markupsafe python-netaddr python-selinux python-yaml
 pip install ansible
+pip install docker-py
 
 ansible-galaxy install -p ./roles -f -r requirements.yml
 #ansible -i localhost.inv default -m setup --connection=local
