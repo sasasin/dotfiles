@@ -4,3 +4,4 @@
   with_items:
     - bundler
     - specific_install
+    - google-ime-skk
