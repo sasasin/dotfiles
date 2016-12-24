@@ -43,6 +43,7 @@
     - curl
     - dkms
     - docker.io
+    - docker-compose
     - doxygen
     - doxygen-gui
     - dstat
@@ -123,7 +124,6 @@
     - usb-creator-gtk
     - virtualbox-5.1
     - vlc
-#    - w64codecs
     - wakeonlan
     - xbindkeys
     - xclip
