@@ -1,0 +1,4 @@
+---
+- name: restart-powertop
+  service: name=powertop.service state=restarted enabled=yes
+

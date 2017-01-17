@@ -111,12 +111,15 @@
     - ppa-purge
     - preload
     - shutter
+    - skkdic-extra
+    - skksearch
     - sloccount
     - sqlite3
     - ssh
     - strongswan
     - synaptic
     - sysstat
+    - terminator
     - ubuntu-fan
     - ubuntu-mate-icon-themes
     - ubuntu-restricted-extras

@@ -1,0 +1,10 @@
+---
+- name: install
+  apt: name=powertop state=latest
+
+- name: put service
+  copy: src=powertop.service dest=/etc/systemd/system/powertop.service
+  notify: restart-powertop
+
+- name: start powertop
+  service: name=powertop.service state=started enabled=yes
