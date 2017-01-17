@@ -5,8 +5,8 @@ if [ "`whoami`" != "root" ]; then
 fi
 # install ansible with dependent packages
 apt-get -y install python2.7 python2.7-dev python-setuptools lsb
-apt-get -y ieee-data python-httplib2 python-jinja2 python-markupsafe python-netaddr python-selinux python-yaml
-easu_setup pip
+apt-get -y install ieee-data python-httplib2 python-jinja2 python-markupsafe python-netaddr python-selinux python-yaml
+easy_install pip
 pip install ansible
 pip install docker-py
 
