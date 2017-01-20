@@ -7,7 +7,7 @@
 
 # https://forums.linuxmint.com/viewtopic.php?t=232167
 - name: install missing bluetooth drivers
-  get_urls: url={{ item }} dest=/lib/firmware/ath10k/QCA6174/hw3.0/
+  get_url: url={{ item }} dest=/lib/firmware/ath10k/QCA6174/hw3.0/
   with_items:
     - http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/plain/ath10k/QCA6174/hw3.0/board-2.bin
     - http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/plain/ath10k/QCA6174/hw3.0/board.bin
