@@ -133,6 +133,7 @@
     - xvkbd
     - zlib1g
     - zlib1g-dev
+    - nvidia-367
 
 - name: remove some packages
   apt: name={{ item }} state=absent
