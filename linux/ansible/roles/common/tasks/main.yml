@@ -133,7 +133,6 @@
     - xvkbd
     - zlib1g
     - zlib1g-dev
-    - nvidia-367
 
 - name: remove some packages
   apt: name={{ item }} state=absent
@@ -151,3 +150,11 @@
   shell: apt-get install -y $(check-language-support)
   register: res
   changed_when: res.rc != 0
+
+# https://booleestreet.net/archives/10321#Wifi
+- name: disable dnsmasq on NetworkManager
+  copy: src=NetworkManager.conf dest=/etc/NetworkManager/NetworkManager.conf
+
+# https://booleestreet.net/archives/10321#i-5
+- name: put wakenet.sh
+  copy: src=wakenet.sh dest=/etc/pm/sleep.d/wakenet.sh mode=0755

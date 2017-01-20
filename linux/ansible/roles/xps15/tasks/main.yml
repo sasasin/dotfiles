@@ -1,0 +1,14 @@
+---
+# https://ubuntuforums.org/showthread.php?t=2317843
+- name: install some packages
+  apt: name={{ item }} state=present
+  with_items:
+    - nvidia-367
+
+# https://forums.linuxmint.com/viewtopic.php?t=232167
+- name: install missing bluetooth drivers
+  get_urls: url={{ item }} dest=/lib/firmware/ath10k/QCA6174/hw3.0/
+  with_items:
+    - http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/plain/ath10k/QCA6174/hw3.0/board-2.bin
+    - http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/plain/ath10k/QCA6174/hw3.0/board.bin
+    - http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/plain/ath10k/QCA6174/hw3.0/firmware-4.bin

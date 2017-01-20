@@ -4,7 +4,7 @@ Description=PowerTOP auto tune
 [Service]
 Type=idle
 Environment="TERM=dumb"
-ExecStart=/bin/sh -c '/usr/sbin/powertop --auto-tune; echo "on" > /sys/bus/usb/devices/1-5/power/control;'
+ExecStart=/bin/powertop-tune.sh
 
 [Install]
 WantedBy=multi-user.target
