@@ -1,0 +1,8 @@
+# 電源ボタンのみでサスペンドから復帰できるようにする
+# http://dothiko.hatenablog.com/entry/2014/04/23/201923
+# https://karlgrz.com/dell-xps-15-ubuntu-tweaks/
+cat /proc/acpi/wakeup \
+| grep -E 'enabled' \
+| grep -vE 'PBTN' \
+| awk '{print $1}' \
+> /proc/acpi/wakeup

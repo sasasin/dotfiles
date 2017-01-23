@@ -158,3 +158,6 @@
 # https://booleestreet.net/archives/10321#i-5
 - name: put wakenet.sh
   copy: src=wakenet.sh dest=/etc/pm/sleep.d/wakenet.sh mode=0755
+
+- name: put rc.local
+  copy: src=rc.local dest=/etc/rc.local
