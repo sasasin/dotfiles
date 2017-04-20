@@ -51,9 +51,10 @@
     - emacs24-el
     - exfat-fuse
     - fbreader
-    - ffmpeg
     - fcitx
     - fcitx-skk
+    - ffmpeg
+    - fish
     - gimp
     - git
     - git-hub
@@ -123,6 +124,8 @@
     - ubuntu-fan
     - ubuntu-mate-icon-themes
     - ubuntu-restricted-extras
+    - uim
+    - uim-skk
     - unpaper
     - usb-creator-gtk
     - virtualbox-5.1

@@ -116,7 +116,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Ricty Diminished-18"
-                               :size 20
+                               :size 40
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -190,7 +190,7 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup t
+   dotspacemacs-fullscreen-at-startup f
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
@@ -291,10 +291,10 @@ you should place your code here."
     (setq default-input-method "japanese-skk")         ;;emacs上での日本語入力にskkをつかう
     ;; http://tagomoris.hatenablog.com/entry/20101209/1291900492
     ;;(require 'skk-setup)
-    (require 'skk-study)
+    ;;(require 'skk-study)
     ;;skk-server AquaSKK
-    (setq skk-server-portnum 1178)
-    (setq skk-server-host "localhost")
+    ;; (setq skk-server-portnum 1178)
+    ;; (setq skk-server-host "localhost")
 
     )
 
