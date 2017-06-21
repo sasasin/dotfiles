@@ -15,6 +15,8 @@ pip3 install --upgrade git+https://github.com/yadayada/acd_cli.git
 pip3 install awscli
 pip3 install awsebcli
 
+add-apt-repository ppa:snwh/pulp
+
 ansible-galaxy install -p ./roles -f -r requirements.yml
 #ansible -i localhost.inv default -m setup --connection=local
 ansible-playbook -i localhost.inv localhost.yml --connection=local

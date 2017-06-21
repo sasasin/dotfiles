@@ -104,9 +104,15 @@
     - optipng
     - otf-freefont
     - p7zip-full
+    - paper-gtk-theme
+    - paper-icon-theme
+    - paper-cursor-theme
     - pdftk
     - perltidy
     - php-all-dev
+    - php-mbstring
+    - php-zip
+    - composer
     - pngnq
     - poppler-data
     - ppa-purge
