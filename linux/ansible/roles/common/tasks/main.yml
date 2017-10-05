@@ -128,7 +128,6 @@
     - sqlite3
     - ssh
     - strongswan
-    - sublime-text
     - synaptic
     - sysstat
     - terminator
@@ -142,7 +141,6 @@
     - vim
     - virtualbox-5.1
     - vlc
-    - wakeonlan
     - xbindkeys
     - xclip
     - xvkbd
