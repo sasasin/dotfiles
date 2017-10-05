@@ -22,3 +22,5 @@ ansible-galaxy install -p ./roles -f -r requirements.yml
 ansible-playbook -i localhost.inv localhost.yml --connection=local
 sudo -iu $SUDO_USER /bin/bash -lc '/usr/bin/im-config -n uim'
 sudo -iu $SUDO_USER /bin/bash -lc 'LANG=C xdg-user-dirs-gtk-update'
+
+pip3 install docker-compose
