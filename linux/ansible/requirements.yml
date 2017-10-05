@@ -1,3 +1,4 @@
 ---
 - src: zzet.rbenv
 - src: hnakamur.atom-packages
+- src: joshualund.golang
