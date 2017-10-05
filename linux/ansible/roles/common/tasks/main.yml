@@ -115,6 +115,7 @@
     - php-all-dev
     - php-mbstring
     - php-zip
+    - php-curl
     - composer
     - pngnq
     - poppler-data
