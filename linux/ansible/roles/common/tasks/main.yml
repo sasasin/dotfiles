@@ -50,19 +50,16 @@
     - doxygen
     - doxygen-gui
     - dstat
-    - emacs24
-    - emacs24-el
+    - emacs
     - exfat-fuse
     - fbreader
     - fcitx
     - fcitx-skk
     - ffmpeg
-    - fish
     - gimp
     - git
     - git-hub
     - git-core
-    - gmtp
     - gnome-mplayer
     - gnome-system-monitor
     - gnome-terminal
@@ -77,8 +74,6 @@
     - language-pack-gnome-ja
     - language-pack-ja
     - language-selector-gnome
-    - libdvdcss2
-    - libdvdread4
     - libimage-size-perl
     - libjpeg-turbo-progs
     - libmoose-perl
@@ -91,8 +86,6 @@
     - macfanctld
     - mencoder
     - mplayer
-    - mtpfs
-    - mtp-tools
     - ncftp
     - ncurses-dev
     - network-manager-openvpn
