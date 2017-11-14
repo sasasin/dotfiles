@@ -9,5 +9,5 @@
     - zzet.rbenv
     - ruby-tools
     - powertop
-    - xps15
+    #- xps15
     - joshualund.golang

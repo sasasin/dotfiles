@@ -34,25 +34,20 @@
   apt: name={{ item }} state=present
   with_items:
     - autoconf
-    #- awscli
     - build-essential
     - cifs-utils
     - curl
     - dkms
-    #- docker-ce
-    #- doxygen
-    #- doxygen-gui
     - dstat
     - emacs
     - exfat-fuse
-    - fbreader
     - ffmpeg
     - gimp
     - git
     - git-hub
     - git-core
-    - gnome-mplayer
     - gnome-system-monitor
+    - gnome-tweak-tool
     - gnome-terminal
     - google-chrome-stable
     - gparted
@@ -60,8 +55,8 @@
     - ibus
     - ibus-skk
     - imagemagick
-    #- kbuild
-    #- kernel-package
+    - kbuild
+    - kernel-package
     - language-pack-gnome-ja
     - language-pack-ja
     - language-selector-gnome
@@ -71,13 +66,9 @@
     - libncurses5-dev
     - libpdf-create-perl
     - libqt4-sql-sqlite
-    #- linux-source
     - lm-sensors
     - lsb
     - lynx
-    - macfanctld
-    - mencoder
-    - mplayer
     - ncftp
     - ncurses-dev
     - network-manager-openvpn
@@ -90,8 +81,6 @@
     - openssl
     - openvpn
     - optipng
-    #- otf-freefont
-    - p7zip-full
     - pdftk
     - perltidy
     - php-all-dev
@@ -102,30 +91,28 @@
     - pngnq
     - poppler-data
     - ppa-purge
-    - preload
     - shutter
+    - skkdic-cdb
     - skkdic-extra
     - skksearch
     - sloccount
     - sqlite3
     - ssh
-    #- strongswan
     - synaptic
     - sysstat
-    - terminator
     - ubuntu-fan
-    #- ubuntu-mate-icon-themes
-    #- ubuntu-restricted-extras
     - unpaper
     - usb-creator-gtk
     - vim
-    - virtualbox
-    - vlc
     - xbindkeys
     - xclip
     - xvkbd
     - zlib1g
     - zlib1g-dev
+    - bridge-utils
+    - ruby-all-dev
+    - apparmor-utils
+    - mysql-workbench
 
 - name: remove some packages
   apt: name={{ item }} state=absent
@@ -135,9 +122,6 @@
     - gnumeric-doc
     - abiword
     - abiword-common
-    - unity-lens-shopping
-    - unity-lens-photos
-    - unity-lens-radios
 
 - name: install language-support
   shell: apt-get install -y $(check-language-support)
