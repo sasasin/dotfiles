@@ -19,9 +19,9 @@
 - name: put apt.sources.list
   template: src=etc/apt/sources.list.d/{{ item }} dest=/etc/apt/sources.list.d/{{ item }}
   with_items:
-    #    - docker.list
+    - docker.list
     - google-chrome.list
-    #    - virtualbox.list
+    - virtualbox.list
 
 - name: apt-get update
   apt: update_cache=yes
@@ -33,6 +33,9 @@
 - name: install some packages
   apt: name={{ item }} state=present
   with_items:
+    - apt-transport-https
+    - ca-certificates
+    - software-properties-common
     - autoconf
     - build-essential
     - cifs-utils
@@ -113,6 +116,7 @@
     - ruby-all-dev
     - apparmor-utils
     - mysql-workbench
+    - virtualbox-5.2
 
 - name: remove some packages
   apt: name={{ item }} state=absent
