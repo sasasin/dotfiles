@@ -49,6 +49,7 @@
     - git
     - git-hub
     - git-core
+    - gnome-shell-extensions
     - gnome-system-monitor
     - gnome-tweak-tool
     - gnome-terminal
@@ -117,6 +118,7 @@
     - apparmor-utils
     - mysql-workbench
     - virtualbox-5.2
+    - chrome-gnome-shell
 
 - name: remove some packages
   apt: name={{ item }} state=absent
