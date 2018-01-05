@@ -1,0 +1,5 @@
+---
+# tasks file for grub
+- name: put grub.conf
+  copy: src=grub dest=/etc/default/grub mode=0644
+  notify: update-grub

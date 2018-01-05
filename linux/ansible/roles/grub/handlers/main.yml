@@ -1,0 +1,4 @@
+---
+# handlers file for grub
+- name: update-grub
+  shell: /usr/sbin/update-grub

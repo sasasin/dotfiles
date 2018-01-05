@@ -6,6 +6,7 @@
     - vars/zzet.rbenv.yml
   roles:
     - common
+    - grub
     - zzet.rbenv
     - ruby-tools
     - powertop
