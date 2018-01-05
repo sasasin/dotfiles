@@ -121,11 +121,8 @@
 - name: remove some packages
   apt: name={{ item }} state=absent
   with_items:
-    - gnumeric
-    - gnumeric-common
-    - gnumeric-doc
-    - abiword
-    - abiword-common
+    - plymouth
+    - libplymouth4
 
 - name: install language-support
   shell: apt-get install -y $(check-language-support)
