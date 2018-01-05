@@ -1,14 +1,14 @@
 ---
 # https://ubuntuforums.org/showthread.php?t=2317843
-- name: install some packages
-  apt: name={{ item }} state=present
-  with_items:
-    - nvidia-375
+#- name: install some packages
+#  apt: name={{ item }} state=present
+#  with_items:
+#    - nvidia-375
 
 # https://forums.linuxmint.com/viewtopic.php?t=232167
-- name: install missing bluetooth drivers
-  get_url: url={{ item }} dest=/lib/firmware/ath10k/QCA6174/hw3.0/ force=true mode=0755
-  with_items:
-    - http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/plain/ath10k/QCA6174/hw3.0/board-2.bin
-    - http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/plain/ath10k/QCA6174/hw3.0/board.bin
-    - http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/plain/ath10k/QCA6174/hw3.0/firmware-4.bin
+#- name: install missing bluetooth drivers
+#  get_url: url={{ item }} dest=/lib/firmware/ath10k/QCA6174/hw3.0/ force=true mode=0755
+#  with_items:
+#    - http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/plain/ath10k/QCA6174/hw3.0/board-2.bin
+#    - http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/plain/ath10k/QCA6174/hw3.0/board.bin
+#    - http://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/plain/ath10k/QCA6174/hw3.0/firmware-4.bin
