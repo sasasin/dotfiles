@@ -7,6 +7,7 @@
   roles:
     - common
     - grub
+    - sysctl
     - zzet.rbenv
     - ruby-tools
     - powertop
