@@ -1,4 +1,10 @@
 ---
+- name: remove some packages
+  apt: name={{ item }} state=absent
+  with_items:
+    - plymouth
+    - libplymouth4
+
 - name: apt-get update
   apt: update_cache=yes
   check_mode: no
