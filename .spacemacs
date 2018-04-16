@@ -35,7 +35,6 @@ values."
      ;; spell-checking
      ;; syntax-checking
      version-control
-     osx
      github
      html
      ansible
