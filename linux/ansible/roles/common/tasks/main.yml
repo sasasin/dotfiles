@@ -62,13 +62,13 @@
     - git
     - git-hub
     - git-core
-    - gnome-shell-extensions
-    - gnome-system-monitor
-    - gnome-tweak-tool
-    - gnome-terminal
+#    - gnome-shell-extensions
+#    - gnome-system-monitor
+#    - gnome-tweak-tool
+#    - gnome-terminal
     - google-chrome-stable
     - gparted
-    - gtk-theme-switch
+#    - gtk-theme-switch
     - ibus
     - ibus-skk
     - imagemagick
@@ -116,7 +116,7 @@
     - sloccount
     - sqlite3
     - ssh
-    - synaptic
+#    - synaptic
     - sysstat
     - ubuntu-fan
     - unpaper
