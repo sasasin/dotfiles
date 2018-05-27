@@ -97,7 +97,7 @@
     - openssl
     - openvpn
     - optipng
-    - pdftk
+#    - pdftk
     - perltidy
     - php-all-dev
     - php-mbstring
