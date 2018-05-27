@@ -52,6 +52,7 @@
     - code
     - dkms
     - dstat
+    - docker-ce
     - emacs
     - enpass
     - exfat-fuse
