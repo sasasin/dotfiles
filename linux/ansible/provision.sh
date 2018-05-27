@@ -7,5 +7,5 @@ fi
 ansible-galaxy install -p ./roles -f -r requirements.yml
 #ansible -i localhost.inv default -m setup --connection=local
 ansible-playbook -i localhost.inv localhost.yml --connection=local --diff
-sudo -iu $SUDO_USER /bin/bash -lc 'LANG=C xdg-user-dirs-gtk-update'
+sudo -iu $SUDO_USER /bin/bash -lc 'LANG=C xdg-user-dirs-update --force'
 sudo -iu $SUDO_USER /bin/bash -lc 'gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier "<Super>"'
