@@ -10,14 +10,17 @@ brew update
 brew upgrade
 brew tap caskroom/cask
 brew tap sanemat/font
+# https://qiita.com/Clpsplug/items/73244a14670957703058
+brew tap homebrew/bundle
 
 #brew brewdle
 
-cat brewfile.lst \
-| xargs -L1 brew install
+#cat brewfile.lst \
+#| xargs -L1 brew install
+#cat brewcaskfile.lst \
+#| xargs -L1 brew cask install
 
-cat brewcaskfile.lst \
-| xargs -L1 brew cask install
+brew bundle
 
 cat vagrantplugins.lst \
 | xargs -L1 vagrant plugin install 
