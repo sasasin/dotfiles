@@ -65,10 +65,10 @@
     - git
 #    - git-hub
     - git-core
-#    - gnome-shell-extensions
-#    - gnome-system-monitor
-#    - gnome-tweak-tool
-#    - gnome-terminal
+    - gnome-shell-extensions
+    - gnome-system-monitor
+    - gnome-tweak-tool
+    - gnome-terminal
     - google-chrome-stable
     - gparted
 #    - gtk-theme-switch
@@ -94,6 +94,7 @@
     - network-manager-openvpn
     - network-manager-openvpn-gnome
     - network-manager-vpnc
+    - network-manager-vpnc-gnome
     - ooo-thumbnailer
     - openssl
     - openvpn
@@ -116,7 +117,7 @@
     - sloccount
     - sqlite3
     - ssh
-#    - synaptic
+    - synaptic
     - sysstat
     - ubuntu-fan
     - unpaper
