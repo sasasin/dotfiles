@@ -18,7 +18,8 @@
 - name: add apt-keys
   apt_key: url={{ item }} state=present
   with_items:
-    - "https://www.virtualbox.org/download/oracle_vbox_2016.asc"
+#    - "https://www.virtualbox.org/download/oracle_vbox_2016.asc"
+#    - "https://www.virtualbox.org/download/oracle_vbox.asc"
     - "https://dl-ssl.google.com/linux/linux_signing_key.pub"
     - "https://download.docker.com/linux/ubuntu/gpg"
     - "https://apt.enpass.io/keys/enpass-linux.key"
