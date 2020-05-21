@@ -63,7 +63,7 @@
     - fonts-ricty-diminished
     - gimp
     - git
-    - git-hub
+#    - git-hub
     - git-core
 #    - gnome-shell-extensions
 #    - gnome-system-monitor
@@ -85,7 +85,7 @@
     - libmoose-perl
     - libncurses5-dev
     - libpdf-create-perl
-    - libqt4-sql-sqlite
+#    - libqt4-sql-sqlite
     - lm-sensors
     - lsb
     - lynx
@@ -108,7 +108,7 @@
     - pngnq
     - poppler-data
     - ppa-purge
-    - shutter
+#    - shutter
     - skkdic
     - skkdic-cdb
     - skkdic-extra
@@ -130,7 +130,7 @@
     - bridge-utils
     - ruby-all-dev
     - apparmor-utils
-    - mysql-workbench
+#    - mysql-workbench
     - virtualbox-5.2
     - chrome-gnome-shell
 
