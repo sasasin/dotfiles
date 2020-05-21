@@ -21,7 +21,7 @@
     - "https://www.virtualbox.org/download/oracle_vbox_2016.asc"
     - "https://dl-ssl.google.com/linux/linux_signing_key.pub"
     - "https://download.docker.com/linux/ubuntu/gpg"
-    - "https://dl.sinew.in/keys/enpass-linux.key"
+    - "https://apt.enpass.io/keys/enpass-linux.key"
     - "https://packages.microsoft.com/keys/microsoft.asc"
 
 - apt_repository: repo={{ item }} state=present
@@ -29,7 +29,7 @@
     - "deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
     - "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} nightly"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
-    - "deb http://repo.sinew.in/ stable main"
+    - "deb https://apt.enpass.io/ stable main"
     - "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 
 - name: apt-get update
