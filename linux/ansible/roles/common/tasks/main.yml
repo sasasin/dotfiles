@@ -131,7 +131,7 @@
     - ruby-all-dev
     - apparmor-utils
 #    - mysql-workbench
-    - virtualbox-5.2
+    - virtualbox-6.1
     - chrome-gnome-shell
 
 - name: remove some packages
