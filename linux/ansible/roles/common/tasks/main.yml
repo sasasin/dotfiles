@@ -72,6 +72,7 @@
     - google-chrome-stable
     - gparted
 #    - gtk-theme-switch
+    - golang
     - ibus
     - ibus-skk
     - imagemagick
@@ -91,6 +92,8 @@
     - lynx
     - ncftp
     - ncurses-dev
+    - network-manager-l2tp    
+    - network-manager-l2tp-gnome
     - network-manager-openvpn
     - network-manager-openvpn-gnome
     - network-manager-vpnc
@@ -101,6 +104,7 @@
     - optipng
 #    - pdftk
     - perltidy
+    - peco
     - php-all-dev
     - php-mbstring
     - php-zip
@@ -109,6 +113,7 @@
     - pngnq
     - poppler-data
     - ppa-purge
+    - ripgrep
 #    - shutter
     - skkdic
     - skkdic-cdb
