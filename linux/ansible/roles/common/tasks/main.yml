@@ -50,6 +50,8 @@
     - cifs-utils
     - curl
     - code
+    - default-jdk
+    - default-jdk-doc
     - dkms
     - dstat
     - docker-ce
@@ -93,9 +95,6 @@
     - network-manager-openvpn-gnome
     - network-manager-vpnc
     - ooo-thumbnailer
-    - openjdk-8-doc
-    - openjdk-8-jdk
-    - openjdk-8-source
     - openssl
     - openvpn
     - optipng
