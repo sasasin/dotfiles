@@ -4,8 +4,7 @@ if [ "`whoami`" != "root" ]; then
   exit 1
 fi
 # install ansible with dependent packages
-apt-get -y install ansible python2.7 python2.7-dev python-setuptools lsb
-apt-get -y install ieee-data python-httplib2 python-jinja2 python-markupsafe python-netaddr python-selinux python-yaml
-easy_install pip
-pip2 install -U ansible
+apt-get -y install python3-pip lsb
+apt-get -y install ieee-data python3-httplib2 python3-jinja2 python3-markupsafe python3-netaddr python3-selinux python3-yaml
+pip3 install -U ansible
 
