@@ -18,18 +18,19 @@
 - name: add apt-keys
   apt_key: url={{ item }} state=present
   with_items:
-    - "https://www.virtualbox.org/download/oracle_vbox_2016.asc"
+#    - "https://www.virtualbox.org/download/oracle_vbox_2016.asc"
+#    - "https://www.virtualbox.org/download/oracle_vbox.asc"
     - "https://dl-ssl.google.com/linux/linux_signing_key.pub"
     - "https://download.docker.com/linux/ubuntu/gpg"
-    - "https://dl.sinew.in/keys/enpass-linux.key"
+    - "https://apt.enpass.io/keys/enpass-linux.key"
     - "https://packages.microsoft.com/keys/microsoft.asc"
 
 - apt_repository: repo={{ item }} state=present
   with_items:
     - "deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
-    - "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} nightly"
+    - "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
-    - "deb http://repo.sinew.in/ stable main"
+    - "deb https://apt.enpass.io/ stable main"
     - "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 
 - name: apt-get update
@@ -50,6 +51,8 @@
     - cifs-utils
     - curl
     - code
+    - default-jdk
+    - default-jdk-doc
     - dkms
     - dstat
     - docker-ce
@@ -58,17 +61,19 @@
     - exfat-fuse
     - fcitx-skk
     - ffmpeg
+    - fonts-ricty-diminished
     - gimp
     - git
-    - git-hub
+#    - git-hub
     - git-core
-#    - gnome-shell-extensions
-#    - gnome-system-monitor
-#    - gnome-tweak-tool
-#    - gnome-terminal
+    - gnome-shell-extensions
+    - gnome-system-monitor
+    - gnome-tweak-tool
+    - gnome-terminal
     - google-chrome-stable
     - gparted
 #    - gtk-theme-switch
+    - golang
     - ibus
     - ibus-skk
     - imagemagick
@@ -82,24 +87,26 @@
     - libmoose-perl
     - libncurses5-dev
     - libpdf-create-perl
-    - libqt4-sql-sqlite
+#    - libqt4-sql-sqlite
     - lm-sensors
     - lsb
     - lynx
+    - micro
     - ncftp
     - ncurses-dev
+    - network-manager-l2tp    
+    - network-manager-l2tp-gnome
     - network-manager-openvpn
     - network-manager-openvpn-gnome
     - network-manager-vpnc
+    - network-manager-vpnc-gnome
     - ooo-thumbnailer
-    - openjdk-8-doc
-    - openjdk-8-jdk
-    - openjdk-8-source
     - openssl
     - openvpn
     - optipng
 #    - pdftk
     - perltidy
+    - peco
     - php-all-dev
     - php-mbstring
     - php-zip
@@ -108,7 +115,8 @@
     - pngnq
     - poppler-data
     - ppa-purge
-    - shutter
+    - ripgrep
+#    - shutter
     - skkdic
     - skkdic-cdb
     - skkdic-extra
@@ -116,7 +124,7 @@
     - sloccount
     - sqlite3
     - ssh
-#    - synaptic
+    - synaptic
     - sysstat
     - ubuntu-fan
     - unpaper
@@ -130,8 +138,8 @@
     - bridge-utils
     - ruby-all-dev
     - apparmor-utils
-    - mysql-workbench
-    - virtualbox-5.2
+#    - mysql-workbench
+    - virtualbox-6.1
     - chrome-gnome-shell
 
 - name: remove some packages
@@ -145,9 +153,9 @@
   register: res
   changed_when: res.rc != 0
 
-# https://booleestreet.net/archives/10321#i-5
-- name: put wakenet.sh
-  copy: src=wakenet.sh dest=/etc/pm/sleep.d/wakenet.sh mode=0755
+## https://booleestreet.net/archives/10321#i-5
+#- name: put wakenet.sh
+#  copy: src=wakenet.sh dest=/etc/pm/sleep.d/wakenet.sh mode=0755
 
 - name: put rc.local
   copy: src=rc.local dest=/etc/rc.local
