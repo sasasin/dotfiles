@@ -3,7 +3,7 @@
   apt: name={{ item }} state=absent
   with_items:
     - plymouth
-    - libplymouth4
+    - libplymouth5
 
 - name: apt-get update
   apt: update_cache=yes
@@ -18,8 +18,6 @@
 - name: add apt-keys
   apt_key: url={{ item }} state=present
   with_items:
-#    - "https://www.virtualbox.org/download/oracle_vbox_2016.asc"
-#    - "https://www.virtualbox.org/download/oracle_vbox.asc"
     - "https://dl-ssl.google.com/linux/linux_signing_key.pub"
     - "https://download.docker.com/linux/ubuntu/gpg"
     - "https://apt.enpass.io/keys/enpass-linux.key"
@@ -43,37 +41,38 @@
 - name: install some packages
   apt: name={{ item }} state=present
   with_items:
+    - apparmor-utils
     - apt-transport-https
-    - ca-certificates
-    - software-properties-common
     - autoconf
+    - bridge-utils
     - build-essential
+    - ca-certificates
+    - chrome-gnome-shell
     - cifs-utils
-    - curl
     - code
+    - composer
+    - curl
     - default-jdk
     - default-jdk-doc
     - dkms
-    - dstat
     - docker-ce
-    - emacs
+    - dstat
     - enpass
     - exfat-fuse
     - fcitx-skk
     - ffmpeg
+    - fish
     - fonts-ricty-diminished
     - gimp
     - git
-#    - git-hub
     - git-core
     - gnome-shell-extensions
     - gnome-system-monitor
-    - gnome-tweak-tool
     - gnome-terminal
+    - gnome-tweak-tool
+    - golang
     - google-chrome-stable
     - gparted
-#    - gtk-theme-switch
-    - golang
     - ibus
     - ibus-skk
     - imagemagick
@@ -87,7 +86,6 @@
     - libmoose-perl
     - libncurses5-dev
     - libpdf-create-perl
-#    - libqt4-sql-sqlite
     - lm-sensors
     - lsb
     - lynx
@@ -104,24 +102,24 @@
     - openssl
     - openvpn
     - optipng
-#    - pdftk
-    - perltidy
+    - pdftk
     - peco
+    - perltidy
     - php-all-dev
+    - php-curl
     - php-mbstring
     - php-zip
-    - php-curl
-    - composer
     - pngnq
     - poppler-data
     - ppa-purge
     - ripgrep
-#    - shutter
+    - ruby-all-dev
     - skkdic
     - skkdic-cdb
     - skkdic-extra
     - skksearch
     - sloccount
+    - software-properties-common
     - solaar
     - solaar-gnome3
     - sqlite3
@@ -132,17 +130,12 @@
     - unpaper
     - usb-creator-gtk
     - vim
+    - virtualbox-6.1
     - xbindkeys
     - xclip
     - xvkbd
     - zlib1g
     - zlib1g-dev
-    - bridge-utils
-    - ruby-all-dev
-    - apparmor-utils
-#    - mysql-workbench
-    - virtualbox-6.1
-    - chrome-gnome-shell
 
 - name: remove some packages
   apt: name={{ item }} state=absent
