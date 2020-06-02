@@ -112,6 +112,7 @@
     - pngnq
     - poppler-data
     - ppa-purge
+    - qemu-kvm
     - ripgrep
     - ruby-all-dev
     - skkdic
@@ -130,6 +131,7 @@
     - unpaper
     - usb-creator-gtk
     - vim
+    - virt-manager
     - virtualbox-6.1
     - xbindkeys
     - xclip
