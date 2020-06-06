@@ -1,0 +1,20 @@
+---
+- name: install 
+  apt: name={{ item }} state=present
+  with_items:
+    - yaskkserv
+
+- name: put config
+  copy:
+    src: yaskkserv
+    dest: /etc/default/yaskkserv
+    mode: 0644
+    owner: root
+    group: root
+  notify: restart-yaskkserv
+
+- name: start yaskkserv
+  service:
+    name: yaskkserv
+    state: started
+    enabled: yes

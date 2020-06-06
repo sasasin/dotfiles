@@ -1,0 +1,82 @@
+# Defaults for yaskkserv initscript
+# sourced by /etc/init.d/yaskkserv
+# installed at /etc/default/yaskkserv by the maintainer scripts
+
+#
+# This is a POSIX shell fragment
+#
+
+# YASKKSERV_BIN is type of the daemon binary
+YASKKSERV_BIN="yaskkserv_hairy"
+#YASKKSERV_BIN="yaskkserv_normal"
+#YASKKSERV_BIN="yaskkserv_simple"
+
+########## SERVER SETTINGS #################################
+# Note: These are default settings (options are not needed).
+#       After you change these, uncomment one of DAEMON_OPTS
+#       and restart server.
+
+# for SIMPLE
+#SIMPLE_OPTS="--log-level=1 --max-connection=8 --port=1178"
+
+# for NORMAL
+#NORMAL_OPTS="${SIMPLE_OPTS}"
+
+# for HAIRY
+#HAIRY_OPTS="${NORMAL_OPTS} --server-completion-midasi-length=2048 --server-completion-midasi-string-size=262144 --server-completion-test=1 --google-japanese-input=disable --google-japanese-input-timeout=2.5"
+HAIRY_OPTS="${NORMAL_OPTS} --server-completion-midasi-length=2048 --server-completion-midasi-string-size=262144 --server-completion-test=1 --google-japanese-input-timeout=2.5 --google-japanese-input=notfound-suggest-input --google-suggest"
+# for HAIRY (usage example to enable google japanese input)
+#HAIRY_OPTS="${NORMAL_OPTS} --server-completion-test=1 --google-japanese-input=notfound-input-suggest --google-suggest"
+
+DAEMON_OPTS="${HAIRY_OPTS}"
+#DAEMON_OPTS="${NORMAL_OPTS}"
+#DAEMON_OPTS="${SIMPLE_OPTS}"
+
+########## DICTIONARY SETTINGS ########################################
+## Dictionaries from site local files
+# Note: If you want to use your custom dictionary, put full path to them.
+#
+
+LOCAL_DICS="\
+"
+#/path/to/dic \
+
+## Dictionaries from skkdic* packages
+# Note: uncomment the dictionary which you want to use and sort their order.
+
+PKG_DICS="/etc/alternatives/SKK-JISYO \
+"
+#SKK-JISYO.L \
+#SKK-JISYO.zipcode \
+#SKK-JISYO.station \
+#SKK-JISYO.requested \
+#SKK-JISYO.pubdic+ \
+#SKK-JISYO.propernoun \
+#SKK-JISYO.okinawa \
+#SKK-JISYO.office.zipcode \
+#SKK-JISYO.notes \
+#SKK-JISYO.not_wrong \
+#SKK-JISYO.noregist \
+#SKK-JISYO.mazegaki \
+#SKK-JISYO.law \
+#SKK-JISYO.jinmei \
+#SKK-JISYO.itaiji.JIS3_4 \
+#SKK-JISYO.itaiji \
+#SKK-JISYO.hukugougo \
+#SKK-JISYO.geo \
+#SKK-JISYO.fullname \
+#SKK-JISYO.china_taiwan \
+#SKK-JISYO.assoc \
+#SKK-JISYO.S \
+#SKK-JISYO.ML \
+#SKK-JISYO.M \
+#SKK-JISYO.JIS3_4 \
+#SKK-JISYO.JIS2004 \
+#SKK-JISYO.JIS2 \
+
+DICS="${LOCAL_DICS} ${PKG_DICS}"
+for DIC in ${DICS}
+do
+    DICBN=`basename $DIC`
+    DIC_LIST="${DIC_LIST} /usr/share/yaskkserv/${DICBN}.yaskkserv"
+done

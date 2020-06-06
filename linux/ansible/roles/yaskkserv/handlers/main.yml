@@ -1,0 +1,6 @@
+---
+- name: restart-yaskkserv
+  service:
+    name: yaskkserv
+    state: restarted
+    enabled: yes
