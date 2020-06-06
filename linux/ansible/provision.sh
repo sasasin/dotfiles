@@ -13,3 +13,11 @@ ansible-galaxy install -p ./roles -f -r requirements.yml
 ansible-playbook -i localhost.inv localhost.yml --connection=local --diff -vv
 sudo -iu $SUDO_USER /bin/bash -lc 'LANG=C xdg-user-dirs-update --force'
 sudo -iu $SUDO_USER /bin/bash -lc 'gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier "<Super>"'
+
+usermod -a -G docker $SUDO_USER
+
+sudo snap install microk8s --classic
+usermod -a -G microk8s $SUDO_USER
+chown -f -R $SUDO_USER ~/.kube
+
+sudo snap install starship
