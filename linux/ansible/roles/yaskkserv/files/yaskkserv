@@ -24,7 +24,7 @@ YASKKSERV_BIN="yaskkserv_hairy"
 
 # for HAIRY
 #HAIRY_OPTS="${NORMAL_OPTS} --server-completion-midasi-length=2048 --server-completion-midasi-string-size=262144 --server-completion-test=1 --google-japanese-input=disable --google-japanese-input-timeout=2.5"
-HAIRY_OPTS="${NORMAL_OPTS} --server-completion-midasi-length=2048 --server-completion-midasi-string-size=262144 --server-completion-test=1 --google-japanese-input-timeout=2.5 --google-japanese-input=notfound-suggest-input --google-suggest"
+HAIRY_OPTS="${NORMAL_OPTS} --server-completion-midasi-length=2048 --server-completion-midasi-string-size=262144 --server-completion-test=1 --google-japanese-input-timeout=2.5 --google-japanese-input=notfound-input-suggest --google-suggest"
 # for HAIRY (usage example to enable google japanese input)
 #HAIRY_OPTS="${NORMAL_OPTS} --server-completion-test=1 --google-japanese-input=notfound-input-suggest --google-suggest"
 
