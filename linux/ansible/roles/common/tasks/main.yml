@@ -58,6 +58,7 @@
     - default-jdk-doc
     - dkms
     - docker-ce
+    - docker-compose
     - dstat
     - enpass
     - exfat-fuse
