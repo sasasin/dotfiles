@@ -1,9 +1,10 @@
 ---
 - name: remove some packages
-  apt: name={{ item }} state=absent
-  with_items:
-    - plymouth
-    - libplymouth5
+  apt:
+    state: absent
+    name:
+      - plymouth
+      - libplymouth5
 
 - name: apt-get update
   apt: update_cache=yes
@@ -43,109 +44,110 @@
   changed_when: res.cache_updated != true
 
 - name: install some packages
-  apt: name={{ item }} state=present
-  with_items:
-    - apparmor-utils
-    - apt-transport-https
-    - autoconf
-    - bridge-utils
-    - build-essential
-    - ca-certificates
-    - chrome-gnome-shell
-    - cifs-utils
-    - code
-    - composer
-    - curl
-    - default-jdk
-    - default-jdk-doc
-    - dkms
-    - docker-ce
-    - docker-compose
-    - dstat
-    - enpass
-    - exfat-fuse
-    - fcitx-skk
-    - ffmpeg
-    - fish
-    - fonts-ricty-diminished
-    - gimp
-    - git
-    - git-core
-    - gnome-shell-extensions
-    - gnome-system-monitor
-    - gnome-terminal
-    - gnome-tweak-tool
-    - golang
-    - google-chrome-stable
-    - gparted
-    - ibus
-    - ibus-skk
-    - imagemagick
-    - kbuild
-    - kernel-package
-    - language-pack-gnome-ja
-    - language-pack-ja
-    - language-selector-gnome
-    - libimage-size-perl
-    - libjpeg-turbo-progs
-    - libmoose-perl
-    - libncurses5-dev
-    - libpdf-create-perl
-    - lm-sensors
-    - lsb
-    - lynx
-    - ncftp
-    - ncurses-dev
-    - network-manager-l2tp    
-    - network-manager-l2tp-gnome
-    - network-manager-openvpn
-    - network-manager-openvpn-gnome
-    - network-manager-vpnc
-    - network-manager-vpnc-gnome
-    - ooo-thumbnailer
-    - openssl
-    - openvpn
-    - optipng
-    - pdftk
-    - peco
-    - perltidy
-    - pngnq
-    - poppler-data
-    - ppa-purge
-    - qemu-kvm
-    - ripgrep
-    - ruby-all-dev
-    - skkdic
-    - skkdic-cdb
-    - skkdic-extra
-    - skksearch
-    - sloccount
-    - software-properties-common
-    - solaar
-    - solaar-gnome3
-    - spotify-client
-    - sqlite3
-    - ssh
-    - synaptic
-    - sysstat
-    - tableplus
-    - ubuntu-fan
-    - unpaper
-    - usb-creator-gtk
-    - vim
-    - virt-manager
-    - virtualbox-6.1
-    - xbindkeys
-    - xclip
-    - xvkbd
-    - zlib1g
-    - zlib1g-dev
+  apt:
+    state: present
+    name:
+      - apparmor-utils
+      - apt-transport-https
+      - autoconf
+      - bridge-utils
+      - build-essential
+      - ca-certificates
+      - chrome-gnome-shell
+      - cifs-utils
+      - code
+      - composer
+      - curl
+      - default-jdk
+      - default-jdk-doc
+      - dkms
+      - docker-ce
+      - docker-compose
+      - dstat
+      - enpass
+      - exfat-fuse
+      - fcitx-skk
+      - ffmpeg
+      - fish
+      - fonts-ricty-diminished
+      - gimp
+      - git
+      - git-core
+      - gnome-shell-extensions
+      - gnome-system-monitor
+      - gnome-terminal
+      - gnome-tweak-tool
+      - golang
+      - google-chrome-stable
+      - gparted
+      - ibus
+      - ibus-skk
+      - imagemagick
+      - kbuild
+      - kernel-package
+      - language-pack-gnome-ja
+      - language-pack-ja
+      - language-selector-gnome
+      - libimage-size-perl
+      - libjpeg-turbo-progs
+      - libmoose-perl
+      - libncurses5-dev
+      - libpdf-create-perl
+      - lm-sensors
+      - lsb
+      - lynx
+      - ncftp
+      - ncurses-dev
+      - network-manager-l2tp    
+      - network-manager-l2tp-gnome
+      - network-manager-openvpn
+      - network-manager-openvpn-gnome
+      - network-manager-vpnc
+      - network-manager-vpnc-gnome
+      - ooo-thumbnailer
+      - openssl
+      - openvpn
+      - optipng
+      - pdftk
+      - peco
+      - perltidy
+      - pngnq
+      - poppler-data
+      - ppa-purge
+      - qemu-kvm
+      - ripgrep
+      - ruby-all-dev
+      - skkdic
+      - skkdic-cdb
+      - skkdic-extra
+      - sloccount
+      - software-properties-common
+      - solaar
+      - solaar-gnome3
+      - spotify-client
+      - sqlite3
+      - ssh
+      - synaptic
+      - sysstat
+      - tableplus
+      - ubuntu-fan
+      - unpaper
+      - usb-creator-gtk
+      - vim
+      - virt-manager
+      - virtualbox-6.1
+      - xbindkeys
+      - xclip
+      - xvkbd
+      - zlib1g
+      - zlib1g-dev
 
 - name: remove some packages
-  apt: name={{ item }} state=absent
-  with_items:
-    - plymouth
-    - libplymouth4
+  apt:
+    state: absent
+    name:
+      - plymouth
+      - libplymouth4
 
 - name: install language-support
   shell: apt-get install -y $(check-language-support)
