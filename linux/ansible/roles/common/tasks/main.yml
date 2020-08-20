@@ -160,3 +160,10 @@
 
 - name: put rc.local
   copy: src=rc.local dest=/etc/rc.local
+
+- name: install python pip packages
+  shell: pip3 install -U {{ item }}
+  with_items:
+    - awscli
+    - aws-mfa
+    - ansible
