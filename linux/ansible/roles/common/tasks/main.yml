@@ -64,6 +64,7 @@
       - docker-ce
       - docker-compose
       - dstat
+      - easystroke
       - enpass
       - exfat-fuse
       - fcitx-skk
@@ -93,12 +94,13 @@
       - libmoose-perl
       - libncurses5-dev
       - libpdf-create-perl
+      - libsqlite3-dev
       - lm-sensors
       - lsb
       - lynx
       - ncftp
       - ncurses-dev
-      - network-manager-l2tp    
+      - network-manager-l2tp
       - network-manager-l2tp-gnome
       - network-manager-openvpn
       - network-manager-openvpn-gnome
