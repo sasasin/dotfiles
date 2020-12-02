@@ -17,8 +17,8 @@ sudo -iu $SUDO_USER /bin/bash -lc 'gsettings set org.gnome.desktop.wm.preference
 
 usermod -a -G docker $SUDO_USER
 
-sudo snap install microk8s --classic
-usermod -a -G microk8s $SUDO_USER
-chown -f -R $SUDO_USER ~/.kube
+#sudo snap install microk8s --classic
+#usermod -a -G microk8s $SUDO_USER
+#chown -f -R $SUDO_USER ~/.kube
 
 sudo snap install starship
