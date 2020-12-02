@@ -23,6 +23,5 @@
   with_items:
     - "https://release.gitkraken.com/linux/gitkraken-amd64.deb"
     - "https://www.rescuetime.com/installers/rescuetime_current_amd64.deb"
-    - "https://releases.hashicorp.com/vagrant/{{ vagrant_version.stdout }}/vagrant_{{ vagrant_version.stdout }}_{{ ansible_architecture }}.deb"
     - "{{ slack_deb_url.stdout }}"
     - "https://zoom.us/client/latest/zoom_amd64.deb"

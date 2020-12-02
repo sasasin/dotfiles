@@ -8,6 +8,4 @@
     - common
     - grub
     - sysctl
-    - zzet.rbenv
-    - ruby-tools
     - yaskkserv

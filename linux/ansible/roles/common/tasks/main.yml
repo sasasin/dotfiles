@@ -28,13 +28,11 @@
 
 - apt_repository: repo={{ item }} state=present
   with_items:
-    - "deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
     - "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
     - "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     - "deb https://apt.enpass.io/ stable main"
     - "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
     - "deb [arch=amd64] https://deb.tableplus.com/debian tableplus main"
-    - "deb http://repository.spotify.com stable non-free"
 
 - name: apt-get update
   apt: update_cache=yes
@@ -61,7 +59,7 @@
       - default-jdk
       - default-jdk-doc
       - dkms
-      - docker-ce
+      - docker.io
       - docker-compose
       - dstat
       - easystroke
@@ -85,7 +83,6 @@
       - ibus-skk
       - imagemagick
       - kbuild
-      - kernel-package
       - language-pack-gnome-ja
       - language-pack-ja
       - language-selector-gnome
@@ -126,7 +123,6 @@
       - software-properties-common
       - solaar
       - solaar-gnome3
-      - spotify-client
       - sqlite3
       - ssh
       - synaptic
@@ -135,9 +131,10 @@
       - ubuntu-fan
       - unpaper
       - usb-creator-gtk
+      - vagrant
       - vim
       - virt-manager
-      - virtualbox-6.1
+      - virtualbox
       - xbindkeys
       - xclip
       - xvkbd
