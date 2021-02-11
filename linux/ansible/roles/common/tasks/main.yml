@@ -16,6 +16,11 @@
 - name: apt-get dist-upgrade
   apt: upgrade=dist
 
+- name: Add an apt key by id from a keyserver
+  ansible.builtin.apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: C99B11DEB97541F0
+
 - name: add apt-keys
   apt_key: url={{ item }} state=present
   with_items:
@@ -35,6 +40,7 @@
     - "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
     - "deb [arch=amd64] https://deb.tableplus.com/debian tableplus main"
     - "deb [arch=amd64] https://d3nt0h4h6pmmc4.cloudfront.net/ubuntu bionic main"
+    - "deb https://cli.github.com/packages stable main"
 
 - name: apt-get update
   apt: update_cache=yes
@@ -71,6 +77,7 @@
       - ffmpeg
       - fish
       - fonts-ricty-diminished
+      - gh
       - gimp
       - git
       - git-core
