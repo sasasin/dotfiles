@@ -67,7 +67,7 @@
       - easystroke
       - enpass
       - exfat-fuse
-      - fcitx-skk
+#      - fcitx-skk
       - ffmpeg
       - fish
       - fonts-ricty-diminished
