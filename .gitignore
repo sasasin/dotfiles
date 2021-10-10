@@ -6,3 +6,6 @@ linux/.emacs.d/eshell/history
 # galaxyから取得したroleは管理しない
 linux/ansible/roles/*.*
 linux/ansible/*.retry
+
+# micro
+.config/micro/buffers/*
