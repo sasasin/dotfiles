@@ -13,9 +13,9 @@ set -x PATH $HOME/.linkerd2/bin $PATH
 set -x QT_AUTO_SCREEN_SCALE_FACTOR 2
 
 set -x AWS_DEFAULT_REGION "ap-northeast-1"
-set -x AWS_PROFILE "sasasin"
+set -x AWS_PROFILE "dev"
 
-set -x AWS_VAULT_BACKEND "pass"
+set -x AWS_VAULT_BACKEND "keychain"
 set -x AWS_VAULT_PASS_PREFIX "aws-vault"
 set -x AWS_SESSION_TOKEN_TTL "3h"
 
@@ -27,7 +27,11 @@ balias mi "micro"
 
 #source ~/.asdf/asdf.fish
 
-/opt/homebrew/bin/brew shellenv | source
+if test -e /opt/homebrew/bin/brew
+    /opt/homebrew/bin/brew shellenv | source
+else if test -e /usr/local/bin/brew
+    /usr/local/bin/brew shellenv | source
+end
 
 source (brew --prefix)/opt/asdf/libexec/asdf.fish
 
@@ -38,8 +42,6 @@ end
 if test -d (brew --prefix)"/share/fish/vendor_completions.d"
     set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
 end
-
-#source /usr/local/share/fish/vendor_completions.d/*.fish
 
 # https://starship.rs/
 starship init fish | source
