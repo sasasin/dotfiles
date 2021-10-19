@@ -43,7 +43,6 @@ brew "circleci"
 brew "cli53"
 brew "cloog"
 brew "csvkit"
-brew "dnsmasq", restart_service: true
 brew "docker"
 brew "docker-clean"
 brew "docker-compose"
