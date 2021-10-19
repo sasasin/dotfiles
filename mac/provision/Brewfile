@@ -65,7 +65,6 @@ brew "libtasn1"
 brew "nettle"
 brew "gnutls"
 brew "hub"
-brew "hyperkit"
 brew "imagemagick@6", link: true
 brew "jq"
 brew "kubernetes-cli"
