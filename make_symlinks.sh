@@ -13,3 +13,5 @@ ln -s ~/src/github.com/sasasin/dotfiles/script ~/script
 
 rm -rf ~/.config/fish
 ln -s ~/src/github.com/sasasin/dotfiles/.config/fish ~/.config/fish
+
+ln -s ~/src/github.com/sasasin/dotfiles/.hyper.js ~/.hyper.js
