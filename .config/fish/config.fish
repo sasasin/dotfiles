@@ -19,7 +19,7 @@ set -x AWS_VAULT_BACKEND "keychain"
 set -x AWS_VAULT_PASS_PREFIX "aws-vault"
 set -x AWS_SESSION_TOKEN_TTL "3h"
 
-set -x DOCKER_HOST "ssh://limadocker:60006"
+#set -x DOCKER_HOST "ssh://limadocker:60006"
 
 balias mi "micro"
 #balias pbcopy "xclip -selection c"
