@@ -129,6 +129,8 @@ module.exports = {
         // set to true to enable screen reading apps (like NVDA) to read the contents of the terminal
         screenReaderMode: false,
         // for advanced config flags please refer to https://hyper.is/#cfg
+        // The number of rows to be persisted in terminal buffer for scrolling
+        scrollback: Infinity,
     },
     // a list of plugins to fetch and install from npm
     // format: [@org/]project[#version]
