@@ -2,6 +2,12 @@ function fish_user_key_bindings
     bind \cr peco_select_history # Bind for prco history to Ctrl+r
 end
 
+if test -e /opt/homebrew/bin/brew
+    /opt/homebrew/bin/brew shellenv | source
+else if test -e /usr/local/bin/brew
+    /usr/local/bin/brew shellenv | source
+end
+
 set -x GHQ_SELECTOR peco
 
 set -x PATH $HOME/.local/bin $PATH
@@ -30,13 +36,6 @@ balias mi "micro"
 #balias pbpaste "xclip -selection c -o"
 
 #source ~/.asdf/asdf.fish
-
-if test -e /opt/homebrew/bin/brew
-    /opt/homebrew/bin/brew shellenv | source
-else if test -e /usr/local/bin/brew
-    /usr/local/bin/brew shellenv | source
-end
-
 source (brew --prefix)/opt/asdf/libexec/asdf.fish
 
 if test -d (brew --prefix)"/share/fish/completions"
