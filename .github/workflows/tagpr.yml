@@ -1,0 +1,14 @@
+# https://github.com/Songmu/tagpr
+# https://songmu.jp/riji/entry/2022-09-05-tagpr.html
+name: tagpr
+on:
+  push:
+    branches: ["master"]
+jobs:
+  tagpr:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: Songmu/tagpr@main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
