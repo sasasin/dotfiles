@@ -3,32 +3,23 @@
 # http://qiita.com/hnakamur/items/1c27cf0df19fe57ec624
 xcode-select --install
 
+# for m1
+sudo softwareupdate --install-rosetta
+
 # homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew update
-brew upgrade
-brew tap caskroom/cask
-brew tap sanemat/font
+brew upgrade --greedy
 # https://qiita.com/Clpsplug/items/73244a14670957703058
 brew tap homebrew/bundle
 
-#brew brewdle
-
-#cat brewfile.lst \
-#| xargs -L1 brew install
-#cat brewcaskfile.lst \
-#| xargs -L1 brew cask install
-
 brew bundle
 
-cat vagrantplugins.lst \
-| xargs -L1 vagrant plugin install 
+#cat vagrantplugins.lst \
+#| xargs -L1 vagrant plugin install 
 
 ln -s /usr/local/share/git-core/contrib/diff-highlight/diff-highlight /usr/local/bin/diff-highlight
-
-apm login
-apm stars --install
 
 # ansible hosts file for installed by homebrew
 mkdir -p /usr/local/etc/ansible
