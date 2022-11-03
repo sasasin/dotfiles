@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.0.4](https://github.com/sasasin/dotfiles/compare/v0.0.3...v0.0.4) - 2022-11-03
+- powershell + ghq + fzf by @sasasin in https://github.com/sasasin/dotfiles/pull/18
+
 ## [v0.0.3](https://github.com/sasasin/dotfiles/compare/v0.0.2...v0.0.3) - 2022-11-03
 - Windows の環境構築手順を管理できそうな気配があるので記録していく by @sasasin in https://github.com/sasasin/dotfiles/pull/14
 - winget, choco, scoop by @sasasin in https://github.com/sasasin/dotfiles/pull/16
