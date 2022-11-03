@@ -23,7 +23,7 @@ winget export --output winget.export.json
 scoop で導入したもの
 
 ```
-scoop export > scoopfile.json
+scoop export --config > scoopfile.json
 ```
 
 VSCode。Settings sync now する。
