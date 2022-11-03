@@ -88,6 +88,8 @@ choco install には管理者権限が必要である。winget で導入済み�
 gsudo choco install .....
 ```
 
+現状は font-hackgen のためだけに choco を利用してる。そのうちなんとかしたい。
+
 ## scoop
 
 scoop コマンドの導入。
@@ -99,7 +101,6 @@ scoop コマンドで諸々レストアする。
 ```
 scoop import scoopfile.json
 ```
-
 
 ## VirtualBoxとWSL2を並存させる
 
