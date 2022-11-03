@@ -2,15 +2,24 @@
 
 windows でいろいろ頑張るやつです
 
+# パッケージマネージャーの使い分け
+
+このくらいに使い分けたらよさそう
+
+1. windows 組み込みの手順
+    * wsl --install のように Microsoft が手順やインストーラーを整備しているもの
+1. scoop
+    * まずは scoop で探して入れる
+1. winget
+    * scoop にパッケージはあるけど、インストール時の挙動が怪しい場合
+    * Microsoft 謹製アプリ
+1. choco
+    * chocoにしかパッケージがなく、依存関係が他になく単独でインストールできる場合
+1. msi, exe, zip, tar.gz などで直でインストール
+    * 最終手段
+    * scoop にパッケージを作るなどの動きをしたい
+
 # バックアップする
-
-choco で導入したもの
-
-https://docs.chocolatey.org/en-us/choco/commands/export
-
-```
-choco export
-```
 
 winget で導入したもの
 
@@ -24,6 +33,14 @@ scoop で導入したもの
 
 ```
 scoop export --config > scoopfile.json
+```
+
+choco で導入したもの
+
+https://docs.chocolatey.org/en-us/choco/commands/export
+
+```
+choco export
 ```
 
 VSCode。Settings sync now する。
@@ -70,6 +87,20 @@ https://learn.microsoft.com/ja-jp/windows/package-manager/winget/import
 winget import --import-file winget.export.json
 ```
 
+## scoop
+
+scoop コマンドの導入。
+
+https://scoop.sh/#/
+
+scoop コマンドで諸々レストアする。
+
+```
+scoop import scoopfile.json
+```
+
+https://github.com/ScoopInstaller/Scoop/issues/5208 は近日リリースされるだろう。
+
 ## choco
 
 choco コマンドの導入。windows terminalを管理者モードで起動して。
@@ -89,18 +120,6 @@ gsudo choco install .....
 ```
 
 現状は font-hackgen のためだけに choco を利用してる。そのうちなんとかしたい。
-
-## scoop
-
-scoop コマンドの導入。
-
-https://scoop.sh/#/
-
-scoop コマンドで諸々レストアする。
-
-```
-scoop import scoopfile.json
-```
 
 ## VirtualBoxとWSL2を並存させる
 
