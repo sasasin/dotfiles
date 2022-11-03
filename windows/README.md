@@ -20,6 +20,12 @@ https://learn.microsoft.com/ja-jp/windows/package-manager/winget/export
 winget export --output winget.export.json
 ```
 
+scoop で導入したもの
+
+```
+scoop export > scoopfile.json
+```
+
 VSCode。Settings sync now する。
 
 # レストアする
@@ -87,6 +93,19 @@ gsudo choco install .....
 ```
 
 などとできるようになる。辛抱だ。
+
+## scoop
+
+scoop コマンドの導入。
+
+https://scoop.sh/#/
+
+scoop コマンドで諸々レストアする。
+
+```
+scoop import scoopfile.json
+```
+
 
 ## VirtualBoxとWSL2を並存させる
 
