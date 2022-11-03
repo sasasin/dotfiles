@@ -21,14 +21,6 @@ windows でいろいろ頑張るやつです
 
 # バックアップする
 
-choco で導入したもの
-
-https://docs.chocolatey.org/en-us/choco/commands/export
-
-```
-choco export
-```
-
 winget で導入したもの
 
 https://learn.microsoft.com/ja-jp/windows/package-manager/winget/export
@@ -41,6 +33,14 @@ scoop で導入したもの
 
 ```
 scoop export --config > scoopfile.json
+```
+
+choco で導入したもの
+
+https://docs.chocolatey.org/en-us/choco/commands/export
+
+```
+choco export
 ```
 
 VSCode。Settings sync now する。
@@ -87,6 +87,20 @@ https://learn.microsoft.com/ja-jp/windows/package-manager/winget/import
 winget import --import-file winget.export.json
 ```
 
+## scoop
+
+scoop コマンドの導入。
+
+https://scoop.sh/#/
+
+scoop コマンドで諸々レストアする。
+
+```
+scoop import scoopfile.json
+```
+
+https://github.com/ScoopInstaller/Scoop/issues/5208 は近日リリースされるだろう。
+
 ## choco
 
 choco コマンドの導入。windows terminalを管理者モードで起動して。
@@ -106,18 +120,6 @@ gsudo choco install .....
 ```
 
 現状は font-hackgen のためだけに choco を利用してる。そのうちなんとかしたい。
-
-## scoop
-
-scoop コマンドの導入。
-
-https://scoop.sh/#/
-
-scoop コマンドで諸々レストアする。
-
-```
-scoop import scoopfile.json
-```
 
 ## VirtualBoxとWSL2を並存させる
 
