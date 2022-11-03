@@ -23,7 +23,7 @@ winget export --output winget.export.json
 scoop で導入したもの
 
 ```
-scoop export > scoopfile.json
+scoop export --config > scoopfile.json
 ```
 
 VSCode。Settings sync now する。
@@ -111,11 +111,11 @@ scoop import scoopfile.json
 windows terminal に Git Bash のプロファイルを作る。操作性やカラー、フォントなど windows terminal のガワを利用できるので。
 
 * コマンドライン
-    * `C:\Program Files\Git\bin\bash.exe`
+    * `%USERPROFILE%\scoop\apps\git\current\bin\bash.exe`
 * 開始ディレクトリ
     * `%USERPROFILE%`
 * アイコン
-    * `C:\Program Files\Git\mingw64\share\git\git-for-windows.ico`
+    * `%USERPROFILE%\scoop\apps\git\current\mingw64\share\git\git-for-windows.ico`
 
 Git Bash で $HOME に .bashrc を作る。シンボリックリンクどうにかしたい。
 

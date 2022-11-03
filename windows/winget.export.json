@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2022-11-03T11:05:23.805-00:00",
+	"CreationDate" : "2022-11-03T14:07:42.809-00:00",
 	"Sources" : 
 	[
 		{
@@ -13,9 +13,6 @@
 					"PackageIdentifier" : "Canonical.Ubuntu"
 				},
 				{
-					"PackageIdentifier" : "Git.Git"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.Edge"
 				},
 				{
@@ -26,12 +23,6 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.OneDrive"
-				},
-				{
-					"PackageIdentifier" : "Axosoft.GitKraken"
-				},
-				{
-					"PackageIdentifier" : "Starship.Starship"
 				},
 				{
 					"PackageIdentifier" : "gerardog.gsudo"
