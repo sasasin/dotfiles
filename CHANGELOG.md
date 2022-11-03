@@ -1,5 +1,10 @@
 # Changelog
 
+## [v0.0.3](https://github.com/sasasin/dotfiles/compare/v0.0.2...v0.0.3) - 2022-11-03
+- Windows の環境構築手順を管理できそうな気配があるので記録していく by @sasasin in https://github.com/sasasin/dotfiles/pull/14
+- winget, choco, scoop by @sasasin in https://github.com/sasasin/dotfiles/pull/16
+- Add tools by @sasasin in https://github.com/sasasin/dotfiles/pull/17
+
 ## [v0.0.2](https://github.com/sasasin/dotfiles/compare/v0.0.1...v0.0.2) - 2022-09-11
 - Update 1 by @sasasin in https://github.com/sasasin/dotfiles/pull/9
 - Update initial_setup.sh by @sasasin in https://github.com/sasasin/dotfiles/pull/11
