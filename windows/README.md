@@ -20,6 +20,12 @@ https://learn.microsoft.com/ja-jp/windows/package-manager/winget/export
 winget export --output winget.export.json
 ```
 
+scoop で導入したもの
+
+```
+scoop export > scoopfile.json
+```
+
 VSCode。Settings sync now する。
 
 # レストアする
@@ -76,17 +82,25 @@ https://docs.chocolatey.org/en-us/choco/commands/install
 
 オプションなしに choco install することで、カレントディレクトリの packages.config に記載されたものを全部インストールやろうとする。
 
-```
-choco install
-```
-
-choco で gsudo が入れば、一般ユーザーのwindows terminalから
+choco install には管理者権限が必要である。winget で導入済みの gsudo を挟んでこのように
 
 ```
 gsudo choco install .....
 ```
 
-などとできるようになる。辛抱だ。
+現状は font-hackgen のためだけに choco を利用してる。そのうちなんとかしたい。
+
+## scoop
+
+scoop コマンドの導入。
+
+https://scoop.sh/#/
+
+scoop コマンドで諸々レストアする。
+
+```
+scoop import scoopfile.json
+```
 
 ## VirtualBoxとWSL2を並存させる
 
