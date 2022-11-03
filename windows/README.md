@@ -82,17 +82,11 @@ https://docs.chocolatey.org/en-us/choco/commands/install
 
 オプションなしに choco install することで、カレントディレクトリの packages.config に記載されたものを全部インストールやろうとする。
 
-```
-choco install
-```
-
-choco で gsudo が入れば、一般ユーザーのwindows terminalから
+choco install には管理者権限が必要である。winget で導入済みの gsudo を挟んでこのように
 
 ```
 gsudo choco install .....
 ```
-
-などとできるようになる。辛抱だ。
 
 ## scoop
 
