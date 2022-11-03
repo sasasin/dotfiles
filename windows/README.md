@@ -128,12 +128,17 @@ eval "$(starship init bash)"
 
 ## Starship at PowerShell
 
-windows terminal の powershell に、starship を被せる。 $PROFILE が OneDrive を指してるなら、特に何もやることないはず。
+$PROFILE が OneDrive を指してるなら、特に何もやることないはず。
+
+windows terminal の powershell に、starship を被せる。
 
 ```
 ❯ cat $PROFILE
 Invoke-Expression (&starship init powershell)
 ```
+
+ghq で取得したリポジトリを fzf で漁れるようにする
+https://uvb-76.hatenablog.com/entry/2020/02/14/032712
 
 ## SSH key
 
