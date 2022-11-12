@@ -177,6 +177,26 @@ SSH Keyの手順で生成したSSHキーを取り込む。
 
 https://github.com/sasasin/dotfiles を zip でダウンロードし、どこかに展開した後、何かしら変更があれば、取り込んでGitHubにpushする。
 
+# 日々のアプデ
+
+https://learn.microsoft.com/ja-jp/windows/package-manager/winget/upgrade
+
+```
+winget upgrade --all
+```
+
+https://github.com/ScoopInstaller/Scoop/wiki/Commands
+
+```
+scoop update --all
+```
+
+https://docs.chocolatey.org/en-us/choco/commands/upgrade
+
+```
+choco upgrade all
+```
+
 # 参考
 
 * https://learn.microsoft.com/ja-jp/windows/dev-environment/
