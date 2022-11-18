@@ -9,3 +9,5 @@ linux/ansible/*.retry
 
 # micro
 .config/micro/buffers/*
+
+*.backup
