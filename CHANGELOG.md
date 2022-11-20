@@ -1,5 +1,10 @@
 # Changelog
 
+## [v0.0.5](https://github.com/sasasin/dotfiles/compare/v0.0.4...v0.0.5) - 2022-11-20
+- Readme by @sasasin in https://github.com/sasasin/dotfiles/pull/20
+- update command by @sasasin in https://github.com/sasasin/dotfiles/pull/22
+- Packages by @sasasin in https://github.com/sasasin/dotfiles/pull/23
+
 ## [v0.0.4](https://github.com/sasasin/dotfiles/compare/v0.0.3...v0.0.4) - 2022-11-03
 - powershell + ghq + fzf by @sasasin in https://github.com/sasasin/dotfiles/pull/18
 
