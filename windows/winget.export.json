@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2022-11-03T14:07:42.809-00:00",
+	"CreationDate" : "2022-11-18T23:56:54.244-00:00",
 	"Sources" : 
 	[
 		{
@@ -25,16 +25,22 @@
 					"PackageIdentifier" : "Microsoft.OneDrive"
 				},
 				{
-					"PackageIdentifier" : "gerardog.gsudo"
-				},
-				{
-					"PackageIdentifier" : "nathancorvussolis.corvusskk"
+					"PackageIdentifier" : "Microsoft.DotNet.Runtime.6"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VisualStudioCode"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.Runtime.6"
+					"PackageIdentifier" : "gerardog.gsudo"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerToys"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
+				},
+				{
+					"PackageIdentifier" : "nathancorvussolis.corvusskk"
 				}
 			],
 			"SourceDetails" : 
