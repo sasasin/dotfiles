@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2022-11-18T23:56:54.244-00:00",
+	"CreationDate" : "2023-01-22T17:31:52.290-00:00",
 	"Sources" : 
 	[
 		{
@@ -10,7 +10,7 @@
 					"PackageIdentifier" : "suse.RancherDesktop"
 				},
 				{
-					"PackageIdentifier" : "Canonical.Ubuntu"
+					"PackageIdentifier" : "Fedora.FedoraMediaWriter"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.Edge"
@@ -25,22 +25,28 @@
 					"PackageIdentifier" : "Microsoft.OneDrive"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.Runtime.6"
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.7"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VisualStudioCode"
-				},
-				{
-					"PackageIdentifier" : "gerardog.gsudo"
+					"PackageIdentifier" : "nathancorvussolis.corvusskk"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.PowerToys"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
+					"PackageIdentifier" : "Oracle.VirtualBox"
 				},
 				{
-					"PackageIdentifier" : "nathancorvussolis.corvusskk"
+					"PackageIdentifier" : "Microsoft.VisualStudioCode"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.7"
+				},
+				{
+					"PackageIdentifier" : "gerardog.gsudo"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.Runtime.6"
 				}
 			],
 			"SourceDetails" : 
