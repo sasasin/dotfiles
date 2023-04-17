@@ -10,6 +10,7 @@ end
 
 set -x GHQ_SELECTOR peco
 
+source (brew --prefix)/opt/asdf/libexec/asdf.fish
 set -x PATH $HOME/.local/bin $PATH
 set -x PATH $HOME/go/bin $PATH
 set -x PATH $HOME/scripts $PATH
@@ -36,7 +37,6 @@ balias mi "micro"
 #balias pbpaste "xclip -selection c -o"
 
 #source ~/.asdf/asdf.fish
-source (brew --prefix)/opt/asdf/libexec/asdf.fish
 
 if test -d (brew --prefix)"/share/fish/completions"
     set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/completions
