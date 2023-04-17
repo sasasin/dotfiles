@@ -12,6 +12,8 @@ set -x GHQ_SELECTOR peco
 
 source (brew --prefix)/opt/asdf/libexec/asdf.fish
 
+set -x PATH (brew --prefix)/Cellar/gnu-getopt/2.38.1/bin $PATH
+
 set -x PATH $HOME/.local/bin $PATH
 set -x PATH $HOME/go/bin $PATH
 set -x PATH $HOME/scripts $PATH
