@@ -10,12 +10,17 @@ end
 
 set -x GHQ_SELECTOR peco
 
+source (brew --prefix)/opt/asdf/libexec/asdf.fish
+
+set -x PATH (brew --prefix)/Cellar/gnu-getopt/2.38.1/bin $PATH
+
 set -x PATH $HOME/.local/bin $PATH
 set -x PATH $HOME/go/bin $PATH
 set -x PATH $HOME/scripts $PATH
 set -x PATH /usr/share/nodejs/yarn/bin $PATH
 set -x PATH $HOME/.linkerd2/bin $PATH
 set -x PATH (brew --prefix)/opt/mysql-client/bin $PATH
+set -x PATH $HOME/.rd/bin $PATH
 
 set -x QT_AUTO_SCREEN_SCALE_FACTOR 2
 
@@ -36,7 +41,6 @@ balias mi "micro"
 #balias pbpaste "xclip -selection c -o"
 
 #source ~/.asdf/asdf.fish
-source (brew --prefix)/opt/asdf/libexec/asdf.fish
 
 if test -d (brew --prefix)"/share/fish/completions"
     set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/completions
@@ -49,6 +53,3 @@ end
 # https://starship.rs/
 starship init fish | source
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-set --export --prepend PATH "/Users/sasasin/.rd/bin"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
