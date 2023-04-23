@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.0.6](https://github.com/sasasin/dotfiles/compare/v0.0.5...v0.0.6) - 2023-04-23
+- update 20230122 by @sasasin in https://github.com/sasasin/dotfiles/pull/24
+- Add dot aws by @sasasin in https://github.com/sasasin/dotfiles/pull/26
+
 ## [v0.0.5](https://github.com/sasasin/dotfiles/compare/v0.0.4...v0.0.5) - 2022-11-20
 - Readme by @sasasin in https://github.com/sasasin/dotfiles/pull/20
 - update command by @sasasin in https://github.com/sasasin/dotfiles/pull/22
