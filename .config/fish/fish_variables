@@ -1,6 +1,13 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:3400
+SETUVAR _fisher_decors_2F_fish_2D_ghq_files:\x7e/\x2econfig/fish/functions/__ghq_repository_search\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/ghq_key_bindings\x2efish\x1e\x7e/\x2econfig/fish/completions/ghq\x2efish
+SETUVAR _fisher_evanlucas_2F_fish_2D_kubectl_2D_completions_files:\x7e/\x2econfig/fish/completions/kubectl\x2efish
+SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_balias_files:\x7e/\x2econfig/fish/functions/balias\x2efish
+SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_peco_files:\x7e/\x2econfig/fish/functions/peco_kill\x2efish\x1e\x7e/\x2econfig/fish/functions/peco_select_history\x2efish
+SETUVAR _fisher_plugins:decors/fish\x2dghq\x1eoh\x2dmy\x2dfish/plugin\x2dpeco\x1eoh\x2dmy\x2dfish/plugin\x2dbalias\x1eevanlucas/fish\x2dkubectl\x2dcompletions\x1erstacruz/fish\x2dasdf
+SETUVAR _fisher_rstacruz_2F_fish_2D_asdf_files:\x7e/\x2econfig/fish/conf\x2ed/asdf\x2efish\x1e\x7e/\x2econfig/fish/completions/asdf\x2efish
+SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7
