@@ -1,5 +1,10 @@
 # Changelog
 
+## [v0.0.7](https://github.com/sasasin/dotfiles/compare/v0.0.6...v0.0.7) - 2023-09-10
+- hackgen font file renamed by @sasasin in https://github.com/sasasin/dotfiles/pull/27
+- brew bundle dump -f by @sasasin in https://github.com/sasasin/dotfiles/pull/29
+- fisher 3.x to 4.x upgrade by @sasasin in https://github.com/sasasin/dotfiles/pull/30
+
 ## [v0.0.6](https://github.com/sasasin/dotfiles/compare/v0.0.5...v0.0.6) - 2023-04-23
 - update 20230122 by @sasasin in https://github.com/sasasin/dotfiles/pull/24
 - Add dot aws by @sasasin in https://github.com/sasasin/dotfiles/pull/26
