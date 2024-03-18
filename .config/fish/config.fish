@@ -20,12 +20,12 @@ set -x PATH $HOME/scripts $PATH
 set -x PATH /usr/share/nodejs/yarn/bin $PATH
 set -x PATH $HOME/.linkerd2/bin $PATH
 set -x PATH (brew --prefix)/opt/mysql-client/bin $PATH
-set -x PATH $HOME/.rd/bin $PATH
+#set -x PATH $HOME/.rd/bin $PATH
 
 set -x QT_AUTO_SCREEN_SCALE_FACTOR 2
 
 set -x AWS_DEFAULT_REGION "ap-northeast-1"
-set -x AWS_PROFILE "dev"
+set -x AWS_PROFILE "dummy"
 
 set -x AWS_VAULT_BACKEND "keychain"
 set -x AWS_VAULT_PASS_PREFIX "aws-vault"
@@ -52,4 +52,3 @@ end
 
 # https://starship.rs/
 starship init fish | source
-
