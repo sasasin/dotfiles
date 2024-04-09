@@ -10,8 +10,6 @@ end
 
 set -x GHQ_SELECTOR peco
 
-source (brew --prefix)/opt/asdf/libexec/asdf.fish
-
 set -x PATH (brew --prefix)/opt/gnu-getopt/bin $PATH
 
 set -x PATH $HOME/.local/bin $PATH
@@ -40,8 +38,6 @@ balias mi "micro"
 #balias pbcopy "xclip -selection c"
 #balias pbpaste "xclip -selection c -o"
 
-#source ~/.asdf/asdf.fish
-
 if test -d (brew --prefix)"/share/fish/completions"
     set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/completions
 end
@@ -50,6 +46,7 @@ if test -d (brew --prefix)"/share/fish/vendor_completions.d"
     set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
 end
 
+#fzf --fish | source
+
 # https://starship.rs/
 starship init fish | source
-
