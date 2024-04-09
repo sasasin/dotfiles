@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.0.8](https://github.com/sasasin/dotfiles/compare/v0.0.7...v0.0.8) - 2024-04-09
+- fix gnu-getopt path by @sasasin in https://github.com/sasasin/dotfiles/pull/31
+- add bash profile by @sasasin in https://github.com/sasasin/dotfiles/pull/33
+- add runforesight/workflow-telemetry-action by @sasasin in https://github.com/sasasin/dotfiles/pull/34
+- remove asdf by @sasasin in https://github.com/sasasin/dotfiles/pull/35
+
 ## [v0.0.7](https://github.com/sasasin/dotfiles/compare/v0.0.6...v0.0.7) - 2023-09-10
 - hackgen font file renamed by @sasasin in https://github.com/sasasin/dotfiles/pull/27
 - brew bundle dump -f by @sasasin in https://github.com/sasasin/dotfiles/pull/29
