@@ -8,8 +8,7 @@ jobs:
   tagpr:
     runs-on: ubuntu-latest
     steps:
-    - name: Collect Workflow Telemetry
-      uses: runforesight/workflow-telemetry-action@v1    
+    - uses: catchpoint/workflow-telemetry-action@v2   
     - uses: actions/checkout@v3
     - uses: Songmu/tagpr@main
       env:
