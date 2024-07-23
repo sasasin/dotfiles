@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.0.10](https://github.com/sasasin/dotfiles/compare/v0.0.9...v0.0.10) - 2024-07-23
+- Update tagpr.yml by @sasasin in https://github.com/sasasin/dotfiles/pull/38
+
 ## [v0.0.9](https://github.com/sasasin/dotfiles/compare/v0.0.8...v0.0.9) - 2024-07-23
 - Create dependabot.yml by @sasasin in https://github.com/sasasin/dotfiles/pull/36
 
