@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.0.11](https://github.com/sasasin/dotfiles/compare/v0.0.10...v0.0.11) - 2024-07-29
+- Update tagpr.yml by @sasasin in https://github.com/sasasin/dotfiles/pull/40
+
 ## [v0.0.10](https://github.com/sasasin/dotfiles/compare/v0.0.9...v0.0.10) - 2024-07-23
 - Update tagpr.yml by @sasasin in https://github.com/sasasin/dotfiles/pull/38
 
