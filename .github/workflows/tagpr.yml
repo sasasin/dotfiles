@@ -10,6 +10,6 @@ jobs:
     steps:
     - uses: catchpoint/workflow-telemetry-action@v2   
     - uses: actions/checkout@v3
-    - uses: Songmu/tagpr@main
+    - uses: Songmu/tagpr@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
