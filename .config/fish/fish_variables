@@ -1,6 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:3800
 SETUVAR _fisher_decors_2F_fish_2D_ghq_files:\x7e/\x2econfig/fish/functions/__ghq_repository_search\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/ghq_key_bindings\x2efish\x1e\x7e/\x2econfig/fish/completions/ghq\x2efish
 SETUVAR _fisher_evanlucas_2F_fish_2D_kubectl_2D_completions_files:\x7e/\x2econfig/fish/completions/kubectl\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_balias_files:\x7e/\x2econfig/fish/functions/balias\x2efish
@@ -25,7 +25,7 @@ SETUVAR fish_color_operator:00a6b2
 SETUVAR fish_color_param:00afff
 SETUVAR fish_color_quote:999900
 SETUVAR fish_color_redirection:00afff
-SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_search_match:white\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
