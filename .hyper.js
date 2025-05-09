@@ -11,7 +11,7 @@ module.exports = {
         fontSize: 18,
         // font family with optional fallbacks
         //fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
-        fontFamily: '"HackGen35 Console NF"',
+        fontFamily: '"UDEV Gothic 35NFLG"',
         // default font weight: 'normal' or 'bold'
         fontWeight: 'normal',
         // font weight for bold characters: 'normal' or 'bold'
@@ -138,7 +138,7 @@ module.exports = {
     //   `hyperpower`
     //   `@company/project`
     //   `project#1.0.1`
-    plugins: ["hyper-one-light"],
+    plugins: ["hyper-relaxed"],
     // in development, you can create a directory under
     // `~/.hyper_plugins/local/` and include it here
     // to load it and avoid it being `npm install`ed
