@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.0.11](https://github.com/sasasin/dotfiles/compare/v0.0.10...v0.0.11) - 2025-05-10
+- Update tagpr.yml by @sasasin in https://github.com/sasasin/dotfiles/pull/40
+- パッケージ現況出力 by @sasasin in https://github.com/sasasin/dotfiles/pull/42
+- patch/1 by @sasasin in https://github.com/sasasin/dotfiles/pull/43
+- 親CLI magick のサブコマンドを呼ぶ形に改める by @sasasin in https://github.com/sasasin/dotfiles/pull/44
+
 ## [v0.0.10](https://github.com/sasasin/dotfiles/compare/v0.0.9...v0.0.10) - 2024-07-23
 - Update tagpr.yml by @sasasin in https://github.com/sasasin/dotfiles/pull/38
 
