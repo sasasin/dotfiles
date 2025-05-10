@@ -11,7 +11,7 @@ find "$@" -type d | while read f; do
 	-o "$(pwd)"/"${OUTDIR}".pdf \
 	-s "A4" -t "" -a "" \
 	) \
-	|| convert -limit memory 2gb -limit map 2gb \
+	|| magick convert -limit memory 2gb -limit map 2gb \
 	"$(pwd)"/"${OUTDIR}"/*.{jpg,JPG,jpeg,JPEG,png,PNG} \
 	"$(pwd)"/"${OUTDIR}".pdf
 
