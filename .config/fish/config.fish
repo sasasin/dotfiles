@@ -3,6 +3,7 @@ function fish_user_key_bindings
 end
 
 if test -e /opt/homebrew/bin/brew
+    fish_add_path /opt/homebrew/bin
     /opt/homebrew/bin/brew shellenv | source
 else if test -e /usr/local/bin/brew
     /usr/local/bin/brew shellenv | source
