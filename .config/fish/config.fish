@@ -30,6 +30,10 @@ set -x AWS_VAULT_BACKEND "keychain"
 set -x AWS_VAULT_PASS_PREFIX "aws-vault"
 set -x AWS_SESSION_TOKEN_TTL "3h"
 
+# https://developer.1password.com/docs/cli/app-integration
+set -x OP_BIOMETRIC_UNLOCK_ENABLED true
+
+
 #set -x KUBECONFIG $HOME/k8s.home.sasasin.net.kubeconfig.yml:$HOME/.kube/config
 
 
