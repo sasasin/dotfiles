@@ -5,22 +5,14 @@
 	log = diff-highlight | less
 	show = diff-highlight | less
 	diff = diff-highlight | less
-
-[push]
-	default = matching
-[core]
-	editor = vim
-	excludesfile = /Users/s_suzuki/.gitignore_global
-[credential]
-	helper = cache
-	helper = cache
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.2.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [filter "lfs"]
-	smudge = git-lfs smudge %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 	required = true
-	clean = git-lfs clean %f
+	clean = git-lfs clean -- %f
+[ghq]
+    root = ~/src
+[core]
+	editor = /opt/homebrew/bin/micro
+[diff "sopsdiffer"]
+        textconv = sops -d
