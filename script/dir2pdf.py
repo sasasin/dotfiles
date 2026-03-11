@@ -7,6 +7,8 @@
 # ///
 
 import sys
+import tempfile
+import zipfile
 from pathlib import Path
 
 from PIL import Image
@@ -20,13 +22,14 @@ def images_in_dir(dirpath: Path) -> list[Path]:
     return sorted(files)
 
 
-def dir_to_pdf(dirpath: Path) -> None:
+def dir_to_pdf(dirpath: Path, output_pdf: Path | None = None) -> None:
     dirpath = dirpath.resolve()
     images = images_in_dir(dirpath)
     if not images:
         return
 
-    output_pdf = Path(str(dirpath) + ".pdf")
+    if output_pdf is None:
+        output_pdf = Path(str(dirpath) + ".pdf")
     output_pdf.unlink(missing_ok=True)
     print(f"converting {dirpath}")
 
@@ -41,18 +44,36 @@ def dir_to_pdf(dirpath: Path) -> None:
     first.save(output_pdf, save_all=True, append_images=rest)
 
 
+def zip_to_pdf(zippath: Path) -> None:
+    zippath = zippath.resolve()
+    output_pdf = zippath.with_suffix(".pdf")
+    with tempfile.TemporaryDirectory() as tmpdir:
+        tmpdir_path = Path(tmpdir)
+        with zipfile.ZipFile(zippath) as zf:
+            for member in zf.namelist():
+                filename = Path(member).name
+                if not filename:
+                    continue
+                (tmpdir_path / filename).write_bytes(zf.read(member))
+        dir_to_pdf(tmpdir_path, output_pdf=output_pdf)
+
+
 def main() -> None:
     if len(sys.argv) < 2:
-        print(f"Usage: {sys.argv[0]} <dir> [dir ...]", file=sys.stderr)
+        print(f"Usage: {sys.argv[0]} <dir|zip> [dir|zip ...]", file=sys.stderr)
         sys.exit(1)
 
     for arg in sys.argv[1:]:
-        root = Path(arg)
-        for dirpath in sorted(root.rglob("*")):
-            if dirpath.is_dir():
-                dir_to_pdf(dirpath)
-        if root.is_dir():
-            dir_to_pdf(root)
+        path = Path(arg)
+        if path.suffix.lower() == ".zip":
+            zip_to_pdf(path)
+        else:
+            root = path
+            for dirpath in sorted(root.rglob("*")):
+                if dirpath.is_dir():
+                    dir_to_pdf(dirpath)
+            if root.is_dir():
+                dir_to_pdf(root)
 
 
 if __name__ == "__main__":
