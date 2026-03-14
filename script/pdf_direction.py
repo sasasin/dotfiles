@@ -25,6 +25,31 @@ def get_current_direction(reader: PdfReader) -> str:
     return vp.get("/Direction", "/L2R")
 
 
+def get_direction_info(reader: PdfReader) -> dict:
+    root = reader.trailer.get("/Root")
+    if root is None:
+        return {"has_viewer_preferences": False, "has_direction": False, "direction": None}
+    vp = root.get("/ViewerPreferences")
+    if vp is None:
+        return {"has_viewer_preferences": False, "has_direction": False, "direction": None}
+    if "/Direction" not in vp:
+        return {"has_viewer_preferences": True, "has_direction": False, "direction": None}
+    return {"has_viewer_preferences": True, "has_direction": True, "direction": str(vp["/Direction"])}
+
+
+def show_info(path: Path) -> None:
+    reader = PdfReader(path)
+    info = get_direction_info(reader)
+    if not info["has_viewer_preferences"]:
+        print(f"{path}: ViewerPreferences not found")
+        print(f"{path}: Inferred direction (PDF spec default): L2R")
+    elif not info["has_direction"]:
+        print(f"{path}: ViewerPreferences found, but Direction not set")
+        print(f"{path}: Inferred direction (PDF spec default): L2R")
+    else:
+        print(f"{path}: Direction: {info['direction'].lstrip('/')}")
+
+
 def set_direction(path: Path, new_dir: str) -> None:
     reader = PdfReader(path)
     current = get_current_direction(reader)
@@ -54,6 +79,7 @@ def main() -> None:
         description="Change PDF ViewerPreferences Direction (reading order)"
     )
     group = parser.add_mutually_exclusive_group()
+    group.add_argument("--info", action="store_true", help="Show current Direction setting")
     group.add_argument("--l2r", action="store_true", help="Set direction to L2R (left to right)")
     group.add_argument("--r2l", action="store_true", help="Set direction to R2L (right to left)")
     parser.add_argument("files", nargs="+", metavar="file.pdf")
@@ -65,16 +91,17 @@ def main() -> None:
             print(f"{path}: file not found", file=sys.stderr)
             continue
 
-        if args.l2r:
-            new_dir = "/L2R"
+        if args.info:
+            show_info(path)
+        elif args.l2r:
+            set_direction(path, "/L2R")
         elif args.r2l:
-            new_dir = "/R2L"
+            set_direction(path, "/R2L")
         else:
             reader = PdfReader(path)
             current = get_current_direction(reader)
             new_dir = "/L2R" if current == "/R2L" else "/R2L"
-
-        set_direction(path, new_dir)
+            set_direction(path, new_dir)
 
 
 if __name__ == "__main__":
