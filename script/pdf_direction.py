@@ -12,7 +12,7 @@ import tempfile
 from pathlib import Path
 
 from pypdf import PdfReader, PdfWriter
-from pypdf.generic import NameObject
+from pypdf.generic import DictionaryObject, NameObject
 
 
 def get_current_direction(reader: PdfReader) -> str:
@@ -34,6 +34,11 @@ def set_direction(path: Path, new_dir: str) -> None:
 
     writer = PdfWriter()
     writer.clone_reader_document_root(reader)
+
+    root = writer._root_object
+    if "/ViewerPreferences" not in root:
+        root[NameObject("/ViewerPreferences")] = writer._add_object(DictionaryObject())
+
     writer.viewer_preferences.direction = NameObject(new_dir)
 
     with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf", dir=path.parent) as tmp:
