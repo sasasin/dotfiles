@@ -3,6 +3,7 @@
 # requires-python = ">=3.11"
 # dependencies = [
 #   "Pillow",
+#   "img2pdf",
 # ]
 # ///
 
@@ -11,6 +12,7 @@ import tempfile
 import zipfile
 from pathlib import Path
 
+import img2pdf
 from PIL import Image
 
 
@@ -33,15 +35,20 @@ def dir_to_pdf(dirpath: Path, output_pdf: Path | None = None) -> None:
     output_pdf.unlink(missing_ok=True)
     print(f"converting {dirpath}")
 
-    pil_images = []
-    for img_path in images:
-        img = Image.open(img_path)
-        if img.mode not in ("RGB", "L"):
-            img = img.convert("RGB")
-        pil_images.append(img)
+    with tempfile.TemporaryDirectory() as tmpdir:
+        paths = []
+        for img_path in images:
+            img = Image.open(img_path)
+            if img.mode == "RGBA":
+                rgb = img.convert("RGB")
+                tmp = Path(tmpdir) / img_path.name
+                rgb.save(tmp, format="PNG")
+                paths.append(tmp)
+            else:
+                paths.append(img_path)
 
-    first, *rest = pil_images
-    first.save(output_pdf, save_all=True, append_images=rest)
+        pdf_bytes = img2pdf.convert([str(p) for p in paths])
+        output_pdf.write_bytes(pdf_bytes)
 
 
 def zip_to_pdf(zippath: Path) -> None:
