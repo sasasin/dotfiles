@@ -46,8 +46,11 @@ ${LLAMA_SERVER} \
   --top-p 0.95 \
   --top-k 20 \
   --min-p 0 \
-  --presence-penalty 0.5 \
+  --presence-penalty 0 \
   --repeat-penalty 1.0 \
+  --ctx-checkpoints 24 \
+  --cache-ram 32768 \
+  --checkpoint-min-step 256 \
   --chat-template-kwargs '{"preserve_thinking":true}' \
   --no-webui \
   --metrics \
