@@ -28,7 +28,7 @@ ${LLAMA_SERVER} \
   --n-gpu-layers 99 \
   --cache-type-k q4_0 \
   --cache-type-v q4_0 \
-  -c ${CONTEXT_SIZE} --ctx-size ${CONTEXT_SIZE} \
+  --ctx-size ${CONTEXT_SIZE} \
   -fa on \
   --batch-size ${BATCH_SIZE} \
   --ubatch-size ${UBATCH_SIZE} \
