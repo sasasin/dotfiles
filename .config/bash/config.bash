@@ -33,6 +33,3 @@ done
 for f in "$BASH_CONFIG_DIR/completions/"*.bash; do
     [ -f "$f" ] && eval "$(cat "$f")"
 done
-
-# https://opencode.ai/docs/ja/tui/
-export EDITOR='code --wait'
