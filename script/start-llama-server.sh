@@ -1,4 +1,4 @@
-#!/bin/bash -v
+#!/usr/bin/env bash
 
 # ============================================================
 # llama-server 起動スクリプト
@@ -19,6 +19,10 @@ PORT=8080
 CONTEXT_SIZE=262144
 BATCH_SIZE=2048
 UBATCH_SIZE=1024
+
+# ログ設定
+LOG_FILE="~/.llama-server/logs/llama-server-$(date +%Y%m%d-%H%M%S).log"
+mkdir -p "$(dirname "$LOG_FILE")"
 
 ${LLAMA_SERVER} \
   -m "${MODEL_PATH}" \
@@ -55,4 +59,6 @@ ${LLAMA_SERVER} \
   --no-webui \
   --metrics \
   --jinja \
+  --log-colors off \
+  &>> "$LOG_FILE" \
 ;
