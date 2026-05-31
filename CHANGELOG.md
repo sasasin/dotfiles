@@ -1,5 +1,32 @@
 # Changelog
 
+## [v0.0.11](https://github.com/sasasin/dotfiles/compare/v0.0.10...v0.0.11) - 2026-05-31
+- Update tagpr.yml by @sasasin in https://github.com/sasasin/dotfiles/pull/40
+- パッケージ現況出力 by @sasasin in https://github.com/sasasin/dotfiles/pull/42
+- patch/1 by @sasasin in https://github.com/sasasin/dotfiles/pull/43
+- 親CLI magick のサブコマンドを呼ぶ形に改める by @sasasin in https://github.com/sasasin/dotfiles/pull/44
+- Fish by @sasasin in https://github.com/sasasin/dotfiles/pull/45
+- feat: Enable 1Password CLI biometric unlock by @sasasin in https://github.com/sasasin/dotfiles/pull/46
+- sync/1 by @sasasin in https://github.com/sasasin/dotfiles/pull/47
+- feat: Add Qwen 3.5 9B 64k Modelfile by @sasasin in https://github.com/sasasin/dotfiles/pull/48
+- feat: Add image/PDF conversion scripts by @sasasin in https://github.com/sasasin/dotfiles/pull/49
+- feat: Use img2pdf to embed images into PDF without re-encoding by @sasasin in https://github.com/sasasin/dotfiles/pull/50
+- Remove unused scripts and configs by @sasasin in https://github.com/sasasin/dotfiles/pull/51
+- feat: Replace shell scripts with Python scripts for PDF/image conversion by @sasasin in https://github.com/sasasin/dotfiles/pull/52
+- feat: Add pdf_direction.py to manage PDF reading direction by @sasasin in https://github.com/sasasin/dotfiles/pull/53
+- chore: Remove legacy c9.sh shell script by @sasasin in https://github.com/sasasin/dotfiles/pull/54
+- git: replace diff-highlight with delta by @sasasin in https://github.com/sasasin/dotfiles/pull/55
+- llama-server 起動スクリプトを追加 by @sasasin in https://github.com/sasasin/dotfiles/pull/56
+- script: Remove redundant context size argument by @sasasin in https://github.com/sasasin/dotfiles/pull/57
+- Tune llama-server checkpoint cache settings for OpenCode by @sasasin in https://github.com/sasasin/dotfiles/pull/58
+- feat: add bash config with completions, functions, and OS-specific settings by @sasasin in https://github.com/sasasin/dotfiles/pull/59
+- macOS 向け Bash 設定を整理する by @sasasin in https://github.com/sasasin/dotfiles/pull/60
+- config.bash: ハードコードされたパスを動的なパス解決に変更 by @sasasin in https://github.com/sasasin/dotfiles/pull/61
+- config: improve bash completion and atuin setup by @sasasin in https://github.com/sasasin/dotfiles/pull/62
+- llama-server: stdout/stderrをログファイルにリダイレクトするよう改修 by @sasasin in https://github.com/sasasin/dotfiles/pull/63
+- atuin: --disable-ai --disable-up-arrowオプションを追加 by @sasasin in https://github.com/sasasin/dotfiles/pull/64
+- 更新: windows パッケージリストを再生成 by @sasasin in https://github.com/sasasin/dotfiles/pull/65
+
 ## [v0.0.10](https://github.com/sasasin/dotfiles/compare/v0.0.9...v0.0.10) - 2024-07-23
 - Update tagpr.yml by @sasasin in https://github.com/sasasin/dotfiles/pull/38
 
