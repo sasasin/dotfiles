@@ -47,8 +47,6 @@ export AWS_VAULT_BACKEND=keychain
 export AWS_VAULT_PASS_PREFIX=aws-vault
 export AWS_SESSION_TOKEN_TTL=3h
 
-alias mi='micro'
-
 unset -f prepend_path
 
 # fzf --bash

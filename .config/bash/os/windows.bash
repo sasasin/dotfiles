@@ -22,3 +22,11 @@ export OPENCODE_GIT_BASH_PATH=${CLAUDE_CODE_GIT_BASH_PATH}
 export MSYS=winsymlinks:nativestrict
 # なお Windows 11 では一般ユーザーでシンボリックリンクを作成するには追加の権限が必要で、
 # Windows 11 25h2 では [ 設定 > システム > 詳細設定 > 開発者モード ON ] で作成可能になる。
+
+# _init_completion などを completion が利用している。
+# Git for Windows の bash にバンドルされていない。
+# bash-completion は winget や scoop で配布されていない。
+# ghq get https://github.com/scop/bash-completion
+# したものを source することにした
+# macOS は homebrew で入手したものを利用する
+[[ -f ~/src/github.com/scop/bash-completion/bash_completion ]] && . ~/src/github.com/scop/bash-completion/bash_completion
