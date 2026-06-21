@@ -21,7 +21,7 @@ BATCH_SIZE=2048
 UBATCH_SIZE=1024
 
 # ログ設定
-LOG_FILE="~/.llama-server/logs/llama-server-$(date +%Y%m%d-%H%M%S).log"
+LOG_FILE=~/.llama-server/logs/llama-server-$(date +%Y%m%d-%H%M%S).log
 mkdir -p "$(dirname "$LOG_FILE")"
 
 ${LLAMA_SERVER} \
