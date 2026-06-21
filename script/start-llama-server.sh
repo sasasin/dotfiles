@@ -9,8 +9,8 @@
 
 # --- 設定（必要に応じて変更）---
 LLAMA_SERVER="llama-server.exe"
-MODEL_PATH="${USERPROFILE}\.lmstudio\models\unsloth\Qwen3.6-35B-A3B-GGUF\Qwen3.6-35B-A3B-UD-Q4_K_S.gguf"
-MODEL_ALIAS="qwen3.6-35b-a3b"
+MODEL_PATH=~/hf/unsloth/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_S.gguf
+MODEL_ALIAS="local-model"
 
 # ネットワーク設定
 HOST="127.0.0.1"
