@@ -11,6 +11,8 @@
 [core]
 	editor = micro
 	pager = delta
+    autocrlf = true
+    symlinks = true
 [interactive]
     diffFilter = delta --color-only
 [delta]
