@@ -11,3 +11,4 @@ linux/ansible/*.retry
 .config/micro/buffers/*
 
 *.backup
+mcps/*
