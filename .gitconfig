@@ -22,3 +22,7 @@
     line-numbers = true      # 行番号表示（好み）
 [diff "sopsdiffer"]
     textconv = sops -d
+[credential]
+    helper = manager
+[credential "helperselector"]
+    selected = manager
