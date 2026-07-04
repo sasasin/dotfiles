@@ -26,3 +26,8 @@
     helper = manager
 [credential "helperselector"]
     selected = manager
+[alias]
+tree = log --graph --oneline
+create-branch-ymd = !git switch -c "sasasin/$(date +%Y%m%d/%H%M)"
+switch-master-with-pull = !f() { git switch master && git pull --ff-only origin master; }; f
+switch-main-with-pull = !f() { git switch main && git pull --ff-only origin main; }; f
