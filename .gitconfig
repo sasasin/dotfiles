@@ -1,5 +1,5 @@
 [user]
-	name = ShinnosukeSuzuki
+	name = Shinnosuke Suzuki
 	email = sasasin@sasasin.net
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
