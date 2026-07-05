@@ -1,33 +1,33 @@
 [user]
-	name = Shinnosuke Suzuki
-	email = sasasin@sasasin.net
+name = Shinnosuke Suzuki
+email = sasasin@sasasin.net
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+required = true
+clean = git-lfs clean -- %f
 [ghq]
-    root = ~/src
+root = ~/src
 [core]
-	editor = micro
-	pager = delta
-    autocrlf = true
-    symlinks = true
+editor = micro
+pager = delta
+autocrlf = true
+symlinks = true
 [interactive]
-    diffFilter = delta --color-only
+diffFilter = delta --color-only
 [delta]
-    navigate = true          # n/N で diff セクションを移動（超便利）
-    side-by-side = true      # 好みで false に変更可（1カラム表示）
-    dark = true              # または light / omit（自動判別）
-    line-numbers = true      # 行番号表示（好み）
+navigate = true          # n/N で diff セクションを移動（超便利）
+side-by-side = true      # 好みで false に変更可（1カラム表示）
+dark = true              # または light / omit（自動判別）
+line-numbers = true      # 行番号表示（好み）
 [diff "sopsdiffer"]
-    textconv = sops -d
+textconv = sops -d
 [credential]
-    helper = manager
+helper = manager
 [credential "helperselector"]
-    selected = manager
+selected = manager
 [alias]
-    tree = log --graph --oneline
-    create-branch-ymd = !git switch -c "sasasin/$(date +%Y%m%d/%H%M)"
-    switch-master-with-pull = !git switch master && git pull --ff-only origin master
-    switch-main-with-pull = !git switch main && git pull --ff-only origin main
+tree = log --graph --oneline
+create-branch-ymd = !git switch -c "sasasin/$(date +%Y%m%d/%H%M)"
+switch-master-with-pull = !git switch master && git pull --ff-only origin master
+switch-main-with-pull = !git switch main && git pull --ff-only origin main
