@@ -13,6 +13,7 @@ editor = micro
 pager = delta
 autocrlf = true
 symlinks = true
+excludesFile = ~/.gitignore
 [interactive]
 diffFilter = delta --color-only
 [delta]
