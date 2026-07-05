@@ -31,3 +31,5 @@ tree = log --graph --oneline
 create-branch-ymd = !git switch -c "sasasin/$(date +%Y%m%d/%H%M)"
 switch-master-with-pull = !git switch master && git pull --ff-only origin master
 switch-main-with-pull = !git switch main && git pull --ff-only origin main
+[sequence]
+editor = interactive-rebase-tool
