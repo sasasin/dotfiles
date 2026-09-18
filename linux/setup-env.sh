@@ -14,7 +14,6 @@ sudo apt install -y gh git git-delta git-filter-repo git-lfs
 sudo apt install -y golang
 sudo apt install -y rust-all
 sudo apt install -y fzf
-sudo apt install -y ble.sh
 sudo apt install -y language-pack-gnome-ja language-pack-ja language-selector-gnome
 
 # --------------------------------------------------------------------
@@ -71,4 +70,3 @@ LANG=C xdg-user-dirs-update --force
 mkdir -p ~/snap/firefox/current/.local/share
 ln -s ~/.local/share/fonts ~/snap/firefox/current/.local/share/fonts
 sudo fc-cache -f
-
