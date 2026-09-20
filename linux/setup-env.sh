@@ -10,11 +10,12 @@ sudo apt install -y synaptic
 sudo apt install -y ibus-skk skkdic skkdic-extra skktools skkdic-cdb
 sudo apt install -y gnome-tweaks
 sudo apt install -y starship
-sudo apt install -y gh git git-delta git-filter-repo git-lfs 
+sudo apt install -y gh git git-delta git-filter-repo git-lfs
 sudo apt install -y golang
 sudo apt install -y rust-all
 sudo apt install -y fzf
 sudo apt install -y language-pack-gnome-ja language-pack-ja language-selector-gnome
+sudo apt install -y libpython3-dev python3-dev
 
 # --------------------------------------------------------------------
 # snap
@@ -24,6 +25,7 @@ sudo snap install gitkraken --classic
 sudo snap install code --classic
 sudo snap install brave
 sudo snap install mise --classic
+sudo snap install obsidian
 
 # --------------------------------------------------------------------
 # mise

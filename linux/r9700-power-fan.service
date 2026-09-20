@@ -1,0 +1,12 @@
+[Unit]
+Description=Radeon AI PRO R9700 power cap
+After=local-fs.target
+
+[Service]
+Type=oneshot
+Environment=CAP_W=275
+ExecStart=/usr/local/sbin/r9700-power-fan.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
