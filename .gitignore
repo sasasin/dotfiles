@@ -1,12 +1,3 @@
-linux/.emacs.d/tramp
-linux/.emacs.d/auto-save-list/
-linux/.emacs.d/eshell/lastdir
-linux/.emacs.d/eshell/history
-
-# galaxyから取得したroleは管理しない
-linux/ansible/roles/*.*
-linux/ansible/*.retry
-
 # micro
 .config/micro/buffers/*
 
