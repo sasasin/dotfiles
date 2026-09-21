@@ -16,6 +16,9 @@ sudo apt install -y rust-all
 sudo apt install -y fzf
 sudo apt install -y language-pack-gnome-ja language-pack-ja language-selector-gnome
 sudo apt install -y libpython3-dev python3-dev
+sudo apt install -y wl-clipboard
+sudo apt install -y imagemagick ffmpeg optipng pdftk pngnq poppler-data
+sudo apt install -y docker.io docker-compose-v2
 
 # --------------------------------------------------------------------
 # snap
