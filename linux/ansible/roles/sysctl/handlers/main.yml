@@ -1,3 +1,0 @@
----
-- name: update-sysctl
-  shell: /sbin/sysctl --system
