@@ -3,6 +3,7 @@
 # パッケージインストール
 # --------------------------------------------------------------------
 # apt
+# synaptic で探してインストールする
 sudo apt update
 sudo apt dist-upgrade -y
 sudo apt install -y curl ripgrep
@@ -24,6 +25,7 @@ sudo apt install -y vlc
 
 # --------------------------------------------------------------------
 # snap
+# https://snapcraft.io/store で探してインストールする
 sudo snap install 1password
 sudo snap install slack
 sudo snap install gitkraken --classic
