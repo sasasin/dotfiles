@@ -40,6 +40,7 @@ mise use -g sops@latest
 mise use -g duckdb@latest
 mise use -g helm@latest
 mise use -g helmfile@latest
+mise use -g minikube@latest
 # https://github.com/zed-industries/zed/releases
 mise use -g 'github:zed-industries/zed[prerelease=false,matching=linux-x86_64]@latest'
 # https://github.com/anomalyco/opencode/releases
