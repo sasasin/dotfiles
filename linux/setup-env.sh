@@ -20,6 +20,7 @@ sudo apt install -y wl-clipboard
 sudo apt install -y imagemagick ffmpeg optipng pdftk pngnq poppler-data
 sudo apt install -y docker.io docker-compose-v2
 sudo apt install -y sqlite3
+sudo apt install -y vlc
 
 # --------------------------------------------------------------------
 # snap
