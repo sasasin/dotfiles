@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.0.12](https://github.com/sasasin/dotfiles/compare/v0.0.11...v0.0.12) - 2026-09-21
+
+- sasasin/20260921/1748 by @sasasin in https://github.com/sasasin/dotfiles/pull/74
+- Add sqlite3 installation to setup script by @sasasin in https://github.com/sasasin/dotfiles/pull/76
+- Add VLC installation to setup script by @sasasin in https://github.com/sasasin/dotfiles/pull/77
+- もう使ってないファイルを削除 by @sasasin in https://github.com/sasasin/dotfiles/pull/78
+- Update .gitignore to remove obsolete entries by @sasasin in https://github.com/sasasin/dotfiles/pull/79
+
 ## [v0.0.11](https://github.com/sasasin/dotfiles/compare/v0.0.10...v0.0.11) - 2026-09-20
 
 - Update tagpr.yml by @sasasin in https://github.com/sasasin/dotfiles/pull/40
