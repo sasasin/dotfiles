@@ -1,4 +1,0 @@
----
-- name: put user sysctl
-  copy: src=inotify.conf dest=/etc/sysctl.d/40-inotify.conf
-  notify: update-sysctl

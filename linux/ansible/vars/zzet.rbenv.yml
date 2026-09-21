@@ -1,9 +1,0 @@
-rbenv:
-  env: system
-  version: v1.0.0
-  default_ruby: 2.6.6
-  rubies:
-    - version: 2.6.6
-    - version: 2.4.2
-rbenv_owner: root
-rbenv_group: root
