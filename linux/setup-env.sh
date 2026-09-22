@@ -9,7 +9,7 @@ sudo apt dist-upgrade -y
 sudo apt install -y curl ripgrep
 sudo apt install -y synaptic
 sudo apt install -y ibus-skk skkdic skkdic-extra skktools skkdic-cdb
-sudo apt install -y gnome-tweaks
+sudo apt install -y gnome-tweaks gnome-shell-extension-manager
 sudo apt install -y starship
 sudo apt install -y gh git git-delta git-filter-repo git-lfs
 sudo apt install -y golang
