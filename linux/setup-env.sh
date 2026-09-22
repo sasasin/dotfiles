@@ -62,6 +62,11 @@ mise use -g 'github:ggml-org/llama.cpp[version_prefix=b,prerelease=true,matching
 # Grok Build
 # https://github.com/xai-org/grok-build
 curl -fsSL https://x.ai/cli/install.sh | bash
+# Vicinae is a keyboard-driven command launcher for Linux and macOS, inspired by Raycast.
+# https://docs.vicinae.com/install/linux
+sudo apt install -y libopengl0
+curl -fsSL https://vicinae.com/install | bash
+systemctl --user enable --now vicinae.service
 
 # --------------------------------------------------------------------
 # そのほか設定
