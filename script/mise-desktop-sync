@@ -1,0 +1,338 @@
+#!/usr/bin/env python3
+# mise でインストールした GUI アプリのうち、
+# Linux デスクトップ向けに *.desktop ファイルを用意してるものに関して、
+# アプリランチャー vicinae が発見してくれるディレクトリにコピってパッチする
+# (1) mise reshim
+# (2) ~/.local/share/mise/installs/*/latest/share/applications/*.desktop を発見
+# (3) upstream の .desktop を ~/.local/share/applications/ に同期
+# (4) Exec= と TryExec= の実行ファイルを ~/.local/share/mise/shims/... に置換
+# (5) Desktop Action 内の Exec= も置換
+# (6) share/icons/ 以下を ~/.local/share/icons/ に同期
+# ※ ユーザーが手書きした .desktop を誤って上書きしない
+# ※ --dry-run と --force を用意
+from __future__ import annotations
+
+import argparse
+import os
+import re
+import shutil
+import subprocess
+import sys
+from pathlib import Path
+
+
+MANAGED_MARKER = "# Managed by mise-desktop-sync"
+
+
+def xdg_data_home() -> Path:
+    value = os.environ.get("XDG_DATA_HOME")
+    if value:
+        return Path(value).expanduser()
+    return Path.home() / ".local" / "share"
+
+
+def mise_data_dir() -> Path:
+    value = os.environ.get("MISE_DATA_DIR")
+    if value:
+        return Path(value).expanduser()
+    return Path.home() / ".local" / "share" / "mise"
+
+
+def quote_desktop_exec_token(value: str) -> str:
+    """
+    Quote a token for the Desktop Entry Exec field when necessary.
+    """
+    if not re.search(r'[\s"\\]', value):
+        return value
+
+    escaped = value.replace("\\", "\\\\").replace('"', '\\"')
+    return f'"{escaped}"'
+
+
+def split_first_exec_token(value: str) -> tuple[str, str] | None:
+    """
+    Split an Exec/TryExec value into:
+        (executable, untouched remainder)
+
+    Handles a normal unquoted executable and a double-quoted executable.
+    """
+    value = value.lstrip()
+
+    if not value:
+        return None
+
+    if value.startswith('"'):
+        escaped = False
+
+        for i in range(1, len(value)):
+            ch = value[i]
+
+            if escaped:
+                escaped = False
+                continue
+
+            if ch == "\\":
+                escaped = True
+                continue
+
+            if ch == '"':
+                token = value[1:i]
+                token = token.replace('\\"', '"').replace("\\\\", "\\")
+                return token, value[i + 1 :]
+
+        return None
+
+    match = re.match(r"([^\s]+)(.*)$", value)
+    if not match:
+        return None
+
+    return match.group(1), match.group(2)
+
+
+def rewrite_command(value: str, shims_dir: Path) -> tuple[str, bool]:
+    parsed = split_first_exec_token(value)
+    if not parsed:
+        return value, False
+
+    executable, remainder = parsed
+
+    # Examples:
+    #   zed
+    #   /some/mise/install/bin/zed
+    executable_name = Path(executable).name
+
+    shim = shims_dir / executable_name
+
+    if not shim.exists():
+        return value, False
+
+    replacement = quote_desktop_exec_token(str(shim))
+    return replacement + remainder, True
+
+
+def render_desktop_file(source: Path, shims_dir: Path) -> tuple[str, list[str]]:
+    text = source.read_text(encoding="utf-8")
+
+    rewritten_commands: list[str] = []
+    output: list[str] = []
+
+    for line in text.splitlines(keepends=True):
+        match = re.match(r"^(Exec|TryExec)=(.*?)(\r?\n)?$", line)
+
+        if not match:
+            output.append(line)
+            continue
+
+        key = match.group(1)
+        value = match.group(2)
+        newline = match.group(3) or ""
+
+        new_value, changed = rewrite_command(value, shims_dir)
+
+        if changed:
+            rewritten_commands.append(f"{key}: {value} -> {new_value}")
+
+        output.append(f"{key}={new_value}{newline}")
+
+    result = "".join(output)
+
+    if not result.startswith(MANAGED_MARKER):
+        result = (
+            MANAGED_MARKER
+            + "\n"
+            + "# Source: "
+            + str(source)
+            + "\n"
+            + result
+        )
+
+    return result, rewritten_commands
+
+
+def copy_icon_tree(
+    source_root: Path,
+    destination_root: Path,
+    *,
+    dry_run: bool,
+) -> int:
+    source_icons = source_root / "share" / "icons"
+
+    if not source_icons.is_dir():
+        return 0
+
+    copied = 0
+
+    for source in source_icons.rglob("*"):
+        if not source.is_file():
+            continue
+
+        relative = source.relative_to(source_icons)
+        destination = destination_root / relative
+
+        if dry_run:
+            print(f"  ICON  {relative}")
+        else:
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, destination)
+
+        copied += 1
+
+    return copied
+
+
+def existing_file_is_managed(path: Path) -> bool:
+    if not path.exists():
+        return False
+
+    try:
+        with path.open("r", encoding="utf-8") as f:
+            first_line = f.readline().rstrip("\r\n")
+    except OSError:
+        return False
+
+    return first_line == MANAGED_MARKER
+
+
+def run_reshim(dry_run: bool) -> None:
+    mise = shutil.which("mise")
+
+    if not mise:
+        print("warning: mise not found in PATH; skipping `mise reshim`", file=sys.stderr)
+        return
+
+    print("Running mise reshim")
+
+    if not dry_run:
+        subprocess.run([mise, "reshim"], check=True)
+
+
+def update_desktop_database(applications_dir: Path, dry_run: bool) -> None:
+    command = shutil.which("update-desktop-database")
+
+    if not command:
+        return
+
+    print(f"Updating desktop database: {applications_dir}")
+
+    if not dry_run:
+        subprocess.run(
+            [command, str(applications_dir)],
+            check=False,
+        )
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(
+        description="Expose GUI applications installed by mise to XDG desktop launchers."
+    )
+
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="show what would be changed without writing files",
+    )
+
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="overwrite an existing desktop file not previously managed by this script",
+    )
+
+    parser.add_argument(
+        "--no-reshim",
+        action="store_true",
+        help="do not run `mise reshim` first",
+    )
+
+    args = parser.parse_args()
+
+    data_dir = mise_data_dir()
+    installs_dir = data_dir / "installs"
+    shims_dir = data_dir / "shims"
+
+    data_home = xdg_data_home()
+    applications_dir = data_home / "applications"
+    icons_dir = data_home / "icons"
+
+    if not installs_dir.is_dir():
+        print(f"mise installs directory not found: {installs_dir}", file=sys.stderr)
+        return 1
+
+    if not args.no_reshim:
+        run_reshim(args.dry_run)
+
+    desktop_files = sorted(
+        installs_dir.glob("*/latest/share/applications/*.desktop")
+    )
+
+    if not desktop_files:
+        print("No mise-installed desktop applications found.")
+        return 0
+
+    if not args.dry_run:
+        applications_dir.mkdir(parents=True, exist_ok=True)
+        icons_dir.mkdir(parents=True, exist_ok=True)
+
+    synced = 0
+    skipped = 0
+    icon_count = 0
+
+    for source in desktop_files:
+        destination = applications_dir / source.name
+
+        print()
+        print(f"{source.name}")
+        print(f"  source: {source}")
+
+        if (
+            destination.exists()
+            and not existing_file_is_managed(destination)
+            and not args.force
+        ):
+            print(f"  SKIP   {destination}")
+            print("         existing file is not managed by mise-desktop-sync")
+            print("         use --force to adopt/overwrite it")
+            skipped += 1
+            continue
+
+        rendered, rewrites = render_desktop_file(source, shims_dir)
+
+        for rewrite in rewrites:
+            print(f"  EXEC   {rewrite}")
+
+        if not rewrites:
+            print("  WARN   no Exec/TryExec command matched a mise shim")
+
+        if args.dry_run:
+            print(f"  WRITE  {destination}")
+        else:
+            destination.write_text(rendered, encoding="utf-8")
+            print(f"  SYNC   {destination}")
+
+        # latest/share/applications/foo.desktop
+        #              ^
+        # source.parents[2] == latest
+        version_root = source.parents[2]
+
+        icon_count += copy_icon_tree(
+            version_root,
+            icons_dir,
+            dry_run=args.dry_run,
+        )
+
+        synced += 1
+
+    print()
+    print(
+        f"Done: {synced} desktop file(s) synced, "
+        f"{skipped} skipped, {icon_count} icon file(s) processed."
+    )
+
+    if synced:
+        update_desktop_database(applications_dir, args.dry_run)
+
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
