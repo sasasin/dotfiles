@@ -6,15 +6,13 @@
 # synaptic で探してインストールする
 sudo apt update
 sudo apt dist-upgrade -y
-sudo apt install -y curl ripgrep
+sudo apt install -y curl
 sudo apt install -y synaptic
 sudo apt install -y ibus-skk skkdic skkdic-extra skktools skkdic-cdb
 sudo apt install -y gnome-tweaks gnome-shell-extension-manager
 sudo apt install -y starship
-sudo apt install -y gh git git-delta git-filter-repo git-lfs
-sudo apt install -y golang
+sudo apt install -y git git-delta git-filter-repo git-lfs
 sudo apt install -y rust-all
-sudo apt install -y fzf
 sudo apt install -y language-pack-gnome-ja language-pack-ja language-selector-gnome
 sudo apt install -y libpython3-dev python3-dev
 sudo apt install -y wl-clipboard
@@ -47,6 +45,10 @@ mise use -g duckdb@latest
 mise use -g helm@latest
 mise use -g helmfile@latest
 mise use -g minikube@latest
+mise use -g go@latest
+mise use -g ripgrep@latest
+mise use -g gh@latest
+mise use -g fzf@latest
 # https://github.com/zed-industries/zed/releases
 mise use -g 'github:zed-industries/zed[prerelease=false,matching=linux-x86_64]@latest'
 # https://github.com/anomalyco/opencode/releases
