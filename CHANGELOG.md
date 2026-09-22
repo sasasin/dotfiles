@@ -1,5 +1,18 @@
 # Changelog
 
+## [v0.0.12](https://github.com/sasasin/dotfiles/compare/v0.0.11...v0.0.12) - 2026-09-22
+
+- sasasin/20260921/1748 by @sasasin in https://github.com/sasasin/dotfiles/pull/74
+- Add sqlite3 installation to setup script by @sasasin in https://github.com/sasasin/dotfiles/pull/76
+- Add VLC installation to setup script by @sasasin in https://github.com/sasasin/dotfiles/pull/77
+- もう使ってないファイルを削除 by @sasasin in https://github.com/sasasin/dotfiles/pull/78
+- Update .gitignore to remove obsolete entries by @sasasin in https://github.com/sasasin/dotfiles/pull/79
+- sasasin/20260922/0022 by @sasasin in https://github.com/sasasin/dotfiles/pull/80
+- Add gnome-shell-extension-manager to installation by @sasasin in https://github.com/sasasin/dotfiles/pull/82
+- Add Vicinae installation and mise desktop synchronization by @sasasin in https://github.com/sasasin/dotfiles/pull/83
+- Migrate go, ripgrep, gh, fzf installation to mise by @sasasin in https://github.com/sasasin/dotfiles/pull/84
+- Move macOS setup files to mac/ directory by @sasasin in https://github.com/sasasin/dotfiles/pull/85
+
 ## [v0.0.12](https://github.com/sasasin/dotfiles/compare/v0.0.11...v0.0.12) - 2026-09-21
 
 - sasasin/20260921/1748 by @sasasin in https://github.com/sasasin/dotfiles/pull/74
