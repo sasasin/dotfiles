@@ -30,6 +30,7 @@ sudo snap install code --classic
 sudo snap install brave
 sudo snap install mise --classic
 sudo snap install obsidian
+sudo snap install opencode
 
 # --------------------------------------------------------------------
 # mise
@@ -51,8 +52,6 @@ mise use -g gh@latest
 mise use -g fzf@latest
 # https://github.com/zed-industries/zed/releases
 mise use -g 'github:zed-industries/zed[prerelease=false,matching=linux-x86_64]@latest'
-# https://github.com/anomalyco/opencode/releases
-mise use -g 'github:anomalyco/opencode[matching=linux-x64]@latest'
 # https://github.com/ggml-org/llama.cpp/releases
 # llama.cpp は凝った指定が必要なので
 mise use -g 'github:ggml-org/llama.cpp[version_prefix=b,prerelease=true,matching=ubuntu-rocm-10.0,minimum_release_age=0s]@latest'
