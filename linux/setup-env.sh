@@ -50,6 +50,7 @@ mise use -g go@latest
 mise use -g ripgrep@latest
 mise use -g gh@latest
 mise use -g fzf@latest
+mise use -g node@latest
 # https://github.com/zed-industries/zed/releases
 mise use -g 'github:zed-industries/zed[prerelease=false,matching=linux-x86_64]@latest'
 # https://github.com/ggml-org/llama.cpp/releases
