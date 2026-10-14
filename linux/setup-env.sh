@@ -19,6 +19,7 @@ sudo apt install -y wl-clipboard
 sudo apt install -y imagemagick ffmpeg optipng pdftk pngnq poppler-data
 sudo apt install -y sqlite3
 sudo apt install -y vlc
+sudo apt install -y lynx
 
 # --------------------------------------------------------------------
 # snap
@@ -51,6 +52,7 @@ mise use -g ripgrep@latest
 mise use -g gh@latest
 mise use -g fzf@latest
 mise use -g node@latest
+mise use -g pi@latest
 # https://github.com/zed-industries/zed/releases
 mise use -g 'github:zed-industries/zed[prerelease=false,matching=linux-x86_64]@latest'
 # https://github.com/ggml-org/llama.cpp/releases
