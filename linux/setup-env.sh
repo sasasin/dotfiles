@@ -41,6 +41,7 @@ mise use -g atuin@latest
 mise use -g kubectl@latest
 mise use -g kubectx@latest
 mise use -g uv@latest
+mise use -g pypi:liquidctl@latest
 mise use -g jq@latest
 mise use -g sops@latest
 mise use -g duckdb@latest
@@ -88,3 +89,13 @@ LANG=C xdg-user-dirs-update --force
 mkdir -p ~/snap/firefox/current/.local/share
 ln -s ~/.local/share/fonts ~/snap/firefox/current/.local/share/fonts
 sudo fc-cache -f
+
+## liquidctl
+## https://github.com/liquidctl/liquidctl
+## kraken 280 ポンプ & ファンコントローラー
+## 1) ルールを取得（既に /tmp にダウンロード済み、内容も確認済み）
+# curl -fsSLO https://raw.githubusercontent.com/liquidctl/liquidctl/main/extra/linux/71-liquidctl.rules
+## 2) 適用 —— ここから root 権限が必要
+# sudo -A cp 71-liquidctl.rules /etc/udev/rules.d/
+# sudo -A udevadm control --reload
+# sudo -A udevadm trigger
